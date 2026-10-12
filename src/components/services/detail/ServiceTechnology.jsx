@@ -19,12 +19,11 @@ export default function ServiceTechnology({ service }) {
     if (prefersReducedMotion) return;
 
     const ctx = gsap.context(() => {
-      cardsRef.current.forEach((card, idx) => {
-        if (!card) return;
-
+      const validCards = (cardsRef.current || []).filter(Boolean);
+      validCards.forEach((card, idx) => {
         gsap.fromTo(
           card,
-          { opacity: 0, y: 35, scale: 0.95 },
+          { opacity: 0, y: 30, scale: 0.96 },
           {
             opacity: 1,
             y: 0,
@@ -35,7 +34,7 @@ export default function ServiceTechnology({ service }) {
             scrollTrigger: {
               trigger: card,
               start: 'top 88%',
-              toggleActions: 'play none none none',
+              once: true,
             },
           }
         );

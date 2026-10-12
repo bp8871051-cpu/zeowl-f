@@ -38,28 +38,48 @@ export default function ServiceProcess({ service }) {
         );
       }
 
-      // Sequential activation of nodes
-      nodesRef.current.forEach((node, idx) => {
-        if (!node) return;
-
+      // Sequential activation of desktop nodes
+      const validNodes = (nodesRef.current || []).filter(Boolean);
+      validNodes.forEach((node, idx) => {
         gsap.fromTo(
           node,
-          { opacity: 0, y: 30, scale: 0.9 },
+          { opacity: 0, y: 25, scale: 0.92 },
           {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 0.7,
-            delay: (idx % 4) * 0.1,
+            duration: 0.65,
+            delay: (idx % 7) * 0.08,
             ease: 'power3.out',
             scrollTrigger: {
               trigger: node,
               start: 'top 85%',
-              toggleActions: 'play none none none',
+              once: true,
             },
           }
         );
       });
+
+      // Mobile vertical timeline step entrance
+      const mobileNodes = sectionRef.current.querySelectorAll('.mobile-process-step');
+      if (mobileNodes && mobileNodes.length > 0) {
+        gsap.fromTo(
+          mobileNodes,
+          { opacity: 0, x: -20 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 80%',
+              once: true,
+            },
+          }
+        );
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -149,7 +169,7 @@ export default function ServiceProcess({ service }) {
           {processSteps.map((step, idx) => (
             <div
               key={step.step}
-              className="relative pl-6"
+              className="mobile-process-step relative pl-6"
             >
               {/* Bullet Node on Border */}
               <div className="absolute -left-[31px] sm:-left-[39px] top-1 w-6 h-6 rounded-full bg-[#041525] border-2 border-[#F58220] flex items-center justify-center">

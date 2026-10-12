@@ -25,35 +25,42 @@ export default function ServiceIntro({ service }) {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 80%',
-          toggleActions: 'play none none none',
+          once: true,
         },
       });
 
-      tl.fromTo(
-        headingRef.current,
-        { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }
-      );
+      if (headingRef.current) {
+        tl.fromTo(
+          headingRef.current,
+          { opacity: 0, y: 35 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
+        );
+      }
 
-      tl.fromTo(
-        textRef.current,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
-        '-=0.6'
-      );
+      if (textRef.current) {
+        tl.fromTo(
+          textRef.current,
+          { opacity: 0, y: 25 },
+          { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' },
+          '-=0.5'
+        );
+      }
 
-      tl.fromTo(
-        principlesRef.current,
-        { opacity: 0, y: 35 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: 'power3.out',
-        },
-        '-=0.5'
-      );
+      const validPrinciples = (principlesRef.current || []).filter(Boolean);
+      if (validPrinciples.length > 0) {
+        tl.fromTo(
+          validPrinciples,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.15,
+            ease: 'power3.out',
+          },
+          '-=0.4'
+        );
+      }
     }, sectionRef);
 
     return () => ctx.revert();

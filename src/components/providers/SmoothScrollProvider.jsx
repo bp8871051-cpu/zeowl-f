@@ -50,7 +50,7 @@ export default function SmoothScrollProvider({ children }) {
     };
 
     gsap.ticker.add(updateTicker);
-    gsap.ticker.lagSmoothing(500, 33);
+    gsap.ticker.lagSmoothing(0);
 
     // Refresh ScrollTrigger when images load and DOM updates
     const handleLoad = () => {
@@ -68,11 +68,18 @@ export default function SmoothScrollProvider({ children }) {
 
   // Handle route change: reset scroll to top immediately and refresh ScrollTrigger
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.lenis) {
-      window.lenis.scrollTo(0, { immediate: true });
-      setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 100);
+    if (typeof window !== 'undefined') {
+      if (window.lenis) {
+        window.lenis.scrollTo(0, { immediate: true });
+      }
+      const t1 = setTimeout(() => ScrollTrigger.refresh(), 100);
+      const t2 = setTimeout(() => ScrollTrigger.refresh(), 400);
+      const t3 = setTimeout(() => ScrollTrigger.refresh(), 800);
+      return () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+        clearTimeout(t3);
+      };
     }
   }, [pathname]);
 

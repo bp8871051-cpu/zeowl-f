@@ -32,8 +32,8 @@ export default function ServiceCTA({ service }) {
       }
 
       // Floating tags subtle floating oscillation
-      tagsRef.current.forEach((tag, idx) => {
-        if (!tag) return;
+      const validTags = (tagsRef.current || []).filter(Boolean);
+      validTags.forEach((tag, idx) => {
         gsap.to(tag, {
           y: idx % 2 === 0 ? -12 : 12,
           duration: 3 + (idx % 3),

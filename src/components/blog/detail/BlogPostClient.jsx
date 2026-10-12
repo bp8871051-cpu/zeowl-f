@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -49,34 +48,11 @@ export default function BlogPostClient({ post }) {
   const [activeSection, setActiveSection] = useState(0);
 
   useEffect(() => {
-    // Respect user's motion preferences
-    const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
+    const refreshTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 300);
 
-    if (prefersReducedMotion) return;
-
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      touchMultiplier: 1.5,
-    });
-
-    lenis.on('scroll', ScrollTrigger.update);
-
-    const updateTicker = (time) => {
-      lenis.raf(time * 1000);
-    };
-
-    gsap.ticker.add(updateTicker);
-    gsap.ticker.lagSmoothing(500, 33);
-
-    return () => {
-      gsap.ticker.remove(updateTicker);
-      lenis.destroy();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
+    return () => clearTimeout(refreshTimer);
   }, []);
 
   const handleCopyLink = () => {

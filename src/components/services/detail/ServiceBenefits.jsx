@@ -19,22 +19,21 @@ export default function ServiceBenefits({ service }) {
     if (prefersReducedMotion) return;
 
     const ctx = gsap.context(() => {
-      blocksRef.current.forEach((block, idx) => {
-        if (!block) return;
-
+      const validBlocks = (blocksRef.current || []).filter(Boolean);
+      validBlocks.forEach((block, idx) => {
         gsap.fromTo(
           block,
-          { opacity: 0, y: 40 },
+          { opacity: 0, y: 35 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
-            delay: idx * 0.12,
+            duration: 0.75,
+            delay: idx * 0.1,
             ease: 'power3.out',
             scrollTrigger: {
               trigger: block,
               start: 'top 85%',
-              toggleActions: 'play none none none',
+              once: true,
             },
           }
         );

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -26,35 +25,20 @@ export default function ServiceDetailClient({ service }) {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
+    // Refresh ScrollTrigger after elements mount and images load
+    const t1 = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
 
-    if (prefersReducedMotion) return;
-
-    // Synchronize Lenis smooth momentum scroll with GSAP ScrollTrigger
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      touchMultiplier: 1.5,
-    });
-
-    lenis.on('scroll', ScrollTrigger.update);
-
-    const updateTicker = (time) => {
-      lenis.raf(time * 1000);
-    };
-
-    gsap.ticker.add(updateTicker);
-    gsap.ticker.lagSmoothing(0);
+    const t2 = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 600);
 
     return () => {
-      gsap.ticker.remove(updateTicker);
-      lenis.destroy();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      clearTimeout(t1);
+      clearTimeout(t2);
     };
-  }, [service.slug]);
+  }, [service?.slug]);
 
   return (
     <div className="w-full bg-[#FFFFFF] text-[#071D35] overflow-x-hidden min-h-screen">

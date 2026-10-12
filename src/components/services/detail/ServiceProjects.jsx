@@ -58,23 +58,22 @@ export default function ServiceProjects({ service }) {
     if (prefersReducedMotion) return;
 
     const ctx = gsap.context(() => {
-      cardsRef.current.forEach((card, idx) => {
-        if (!card) return;
-
+      const validCards = (cardsRef.current || []).filter(Boolean);
+      validCards.forEach((card, idx) => {
         gsap.fromTo(
           card,
-          { opacity: 0, y: 50, scale: 0.96 },
+          { opacity: 0, y: 35, scale: 0.97 },
           {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 0.85,
-            delay: (idx % 2) * 0.15,
+            duration: 0.75,
+            delay: (idx % 2) * 0.12,
             ease: 'power3.out',
             scrollTrigger: {
               trigger: card,
               start: 'top 85%',
-              toggleActions: 'play none none none',
+              once: true,
             },
           }
         );

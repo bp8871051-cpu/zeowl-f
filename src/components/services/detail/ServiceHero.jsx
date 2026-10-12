@@ -3,6 +3,11 @@
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 import {
   Rocket,
   Users,
@@ -111,42 +116,84 @@ export default function ServiceHero({ service }) {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      tl.fromTo(
-        breadcrumbRef.current,
-        { opacity: 0, y: -12 },
-        { opacity: 1, y: 0, duration: 0.5 }
-      );
-      tl.fromTo(
-        eyebrowRef.current,
-        { opacity: 0, y: 15 },
-        { opacity: 1, y: 0, duration: 0.5 },
-        '-=0.3'
-      );
-      tl.fromTo(
-        headingRef.current,
-        { opacity: 0, y: 30, filter: 'blur(4px)' },
-        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.8, ease: 'power4.out' },
-        '-=0.3'
-      );
-      tl.fromTo(
-        descRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6 },
-        '-=0.4'
-      );
-      tl.fromTo(
-        ctaRef.current,
-        { opacity: 0, y: 15, scale: 0.96 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.55 },
-        '-=0.4'
-      );
-      if (expertiseRef.current) {
+      if (breadcrumbRef.current) {
         tl.fromTo(
-          expertiseRef.current,
-          { opacity: 0, y: 40 },
-          { opacity: 1, y: 0, duration: 0.8 },
-          '-=0.3'
+          breadcrumbRef.current,
+          { opacity: 0, y: -12 },
+          { opacity: 1, y: 0, duration: 0.45 }
         );
+      }
+      if (eyebrowRef.current) {
+        tl.fromTo(
+          eyebrowRef.current,
+          { opacity: 0, y: 15 },
+          { opacity: 1, y: 0, duration: 0.45 },
+          '-=0.25'
+        );
+      }
+      if (headingRef.current) {
+        tl.fromTo(
+          headingRef.current,
+          { opacity: 0, y: 25 },
+          { opacity: 1, y: 0, duration: 0.75, ease: 'power4.out' },
+          '-=0.25'
+        );
+      }
+      if (descRef.current) {
+        tl.fromTo(
+          descRef.current,
+          { opacity: 0, y: 18 },
+          { opacity: 1, y: 0, duration: 0.55 },
+          '-=0.35'
+        );
+      }
+      if (ctaRef.current) {
+        tl.fromTo(
+          ctaRef.current,
+          { opacity: 0, y: 15, scale: 0.98 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.5 },
+          '-=0.35'
+        );
+      }
+
+      // Dedicated ScrollTrigger for "What We Build / Our Expertise" section
+      if (expertiseRef.current) {
+        gsap.fromTo(
+          expertiseRef.current,
+          { opacity: 0, y: 35 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: expertiseRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        );
+
+        const cards = expertiseRef.current.querySelectorAll('.expertise-card');
+        if (cards && cards.length > 0) {
+          gsap.fromTo(
+            cards,
+            { opacity: 0, y: 30, scale: 0.97 },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.65,
+              stagger: 0.12,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: expertiseRef.current,
+                start: 'top 80%',
+                once: true,
+              },
+            }
+          );
+        }
       }
     }, containerRef);
 
@@ -313,7 +360,7 @@ export default function ServiceHero({ service }) {
             return (
               <div
                 key={card.number || cIdx}
-                className="group relative bg-white rounded-2xl p-7 sm:p-8 border border-slate-100 shadow-[0_10px_30px_rgba(10,28,48,0.04)] hover:shadow-[0_20px_45px_rgba(255,121,0,0.12)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                className="expertise-card group relative bg-white rounded-2xl p-7 sm:p-8 border border-slate-100 shadow-[0_10px_30px_rgba(10,28,48,0.04)] hover:shadow-[0_20px_45px_rgba(255,121,0,0.12)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Top Row: Icon Badge & 01/02/03 Number */}
