@@ -17,8 +17,8 @@ export default function TestimonialsHero() {
           alt=""
           className="w-full h-full object-cover object-right-top sm:object-right lg:object-center select-none"
         />
-        {/* Soft white gradient blend on mobile/left to ensure 100% text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent lg:hidden pointer-events-none" />
+        {/* Soft white gradient blend on left side to subtly reduce background artwork opacity for clean, comfortable readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/50 to-transparent w-full sm:w-[85%] lg:w-[60%] pointer-events-none" />
       </div>
 
       <div className="max-w-[1360px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
