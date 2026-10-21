@@ -59,7 +59,7 @@ const OrbitRing = ({ items, radiusClass, duration, reverse }) => {
 
 export default function TechOrbit() {
   return (
-    <div className="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[560px] lg:h-[560px] mx-auto flex items-center justify-center pointer-events-none mt-6 sm:mt-12 lg:mt-16">
+    <div className="relative w-[270px] h-[270px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[560px] lg:h-[560px] max-w-full mx-auto flex items-center justify-center pointer-events-none mt-6 sm:mt-12 lg:mt-16">
       
       {/* Center Logo */}
       <div className="absolute z-10 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-white rounded-full shadow-[0_10px_50px_rgba(6,24,47,0.15)] flex items-center justify-center border border-neutral-100">

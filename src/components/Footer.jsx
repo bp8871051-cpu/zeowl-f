@@ -7,6 +7,7 @@ import {
   Mail,
   MapPin,
   ChevronRight,
+  Clock,
 } from 'lucide-react';
 
 // Social Icon SVGs
@@ -38,22 +39,6 @@ function FacebookIcon({ className = 'w-4 h-4' }) {
   );
 }
 
-function YoutubeIcon({ className = 'w-4 h-4' }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-      <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" />
-    </svg>
-  );
-}
-
-function XIcon({ className = 'w-4 h-4' }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
 
 // Framer motion variants
 const fadeInUp = {
@@ -84,7 +69,7 @@ const quickLinks = [
   { name: 'Testimonials', href: '/testimonials' },
   { name: 'Our Process', href: '/process' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/contact', isHighlighted: true },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const servicesList = [
@@ -104,8 +89,6 @@ const socialLinks = [
   { name: 'LinkedIn', icon: LinkedInIcon, href: 'https://linkedin.com' },
   { name: 'Instagram', icon: InstagramIcon, href: 'https://instagram.com' },
   { name: 'Facebook', icon: FacebookIcon, href: 'https://facebook.com' },
-  { name: 'YouTube', icon: YoutubeIcon, href: 'https://youtube.com' },
-  { name: 'X', icon: XIcon, href: 'https://x.com' },
 ];
 
 export default function Footer() {
@@ -119,7 +102,7 @@ export default function Footer() {
         <img
           src="/footer-bg.png"
           alt="Zeowl Footer Wave Background"
-          className="w-full h-full object-cover object-bottom block opacity-70"
+          className="w-full h-full object-cover object-bottom block opacity-35"
           loading="lazy"
         />
       </div>
@@ -128,7 +111,7 @@ export default function Footer() {
       {/* 2. TRANSLUCENT OVERLAY LAYER                             */}
       {/* Deep contrast behind text, letting glowing waves shine    */}
       {/* ======================================================== */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#040D1A]/95 via-[#040D1A]/75 to-[#040D1A]/20 pointer-events-none z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#040D1A]/98 via-[#040D1A]/85 to-[#040D1A]/40 pointer-events-none z-10" />
 
       {/* Subtle glowing accent highlight at top border */}
       <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#FF7900]/50 to-transparent pointer-events-none z-10" />
@@ -136,7 +119,7 @@ export default function Footer() {
       {/* ======================================================== */}
       {/* 3. MAIN FOOTER CONTENT (4 COLUMNS DESKTOP)               */}
       {/* ======================================================== */}
-      <div className="max-w-[1420px] w-[92%] mx-auto relative z-20 pt-16 sm:pt-20 lg:pt-24 pb-12 sm:pb-16">
+      <div className="max-w-[1420px] w-[92%] mx-auto relative z-20 pt-14 sm:pt-18 lg:pt-22 pb-12 sm:pb-16">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -149,19 +132,19 @@ export default function Footer() {
           {/* ---------------------------------------------------- */}
           <motion.div variants={fadeInUp} className="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-4">
             {/* Logo - White version for high-contrast crisp visibility */}
-            <Link href="/" className="inline-block mb-6 group focus:outline-none">
+            <Link href="/" className="inline-block mb-5 group focus:outline-none">
               <div className="relative">
                 <img
                   src="/logo/ZEOWL-white.png"
                   alt="Zeowl Infotech"
-                  className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+                  className="h-11 sm:h-13 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
                 />
               </div>
             </Link>
 
             {/* Company Description */}
-            <p className="text-slate-200 text-[14.5px] sm:text-[15px] leading-[1.75] max-w-sm mb-7 font-normal">
-              Turning ideas into powerful digital solutions that help businesses grow, automate and succeed.
+            <p className="text-[#CBD5E1] text-[14.5px] sm:text-[15px] leading-[1.75] max-w-sm mb-6 font-normal">
+              Turning ideas into powerful digital solutions that help ambitious businesses scale, automate workflows and engineer future-ready products.
             </p>
 
             {/* Social Media Glass Icons with hover glow */}
@@ -185,69 +168,63 @@ export default function Footer() {
           </motion.div>
 
           {/* ---------------------------------------------------- */}
-          {/* COLUMN 2: QUICK LINKS (2 Cols)                       */}
+          {/* COLUMNS 2 & 3: QUICK LINKS & OUR SERVICES            */}
+          {/* (Smart 2-col layout on mobile for clean scannability)*/}
           {/* ---------------------------------------------------- */}
-          <motion.div variants={fadeInUp} className="lg:col-span-2 flex flex-col items-start">
-            <h4 className="text-white text-[17px] font-bold tracking-tight">
-              Quick Links
-            </h4>
-            {/* Minimal Orange Underline Accent */}
-            <div className="w-8 h-[2.5px] bg-gradient-to-r from-[#FF7900] to-[#FFA726] rounded-full mt-2.5 mb-5" />
+          <div className="col-span-1 md:col-span-2 lg:col-span-5 grid grid-cols-2 gap-6 sm:gap-8 lg:gap-8">
+            {/* COLUMN 2: QUICK LINKS */}
+            <motion.div variants={fadeInUp} className="flex flex-col items-start">
+              <h4 className="text-white text-[17px] font-bold tracking-tight">
+                Quick Links
+              </h4>
+              {/* Minimal Orange Underline Accent */}
+              <div className="w-8 h-[2.5px] bg-gradient-to-r from-[#FF7900] to-[#FFA726] rounded-full mt-2.5 mb-5" />
 
-            <ul className="space-y-2.5 w-full">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className={`group flex items-center justify-between text-[14.5px] transition-all duration-300 ${
-                      link.isHighlighted
-                        ? 'text-[#FF7900] font-semibold hover:text-white'
-                        : 'text-slate-200 hover:text-[#FF7900] font-normal'
-                    }`}
-                  >
-                    <span className="group-hover:translate-x-1.5 transition-transform duration-300">
-                      {link.name}
-                    </span>
-                    <ChevronRight
-                      className={`w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all duration-300 ${
-                        link.isHighlighted ? 'text-[#FF7900]' : 'text-slate-300 group-hover:text-[#FF7900]'
-                      }`}
-                    />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+              <ul className="space-y-2.5 w-full">
+                {quickLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="group flex items-center justify-between text-[14px] sm:text-[14.5px] text-[#E2E8F0] hover:text-[#FF7900] font-normal transition-all duration-300"
+                    >
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">
+                        {link.name}
+                      </span>
+                      <ChevronRight className="w-3.5 h-3.5 text-[#FF7900]/70 group-hover:text-[#FF7900] group-hover:translate-x-1 transition-all duration-300 shrink-0" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
 
-          {/* ---------------------------------------------------- */}
-          {/* COLUMN 3: OUR SERVICES (3 Cols)                      */}
-          {/* ---------------------------------------------------- */}
-          <motion.div variants={fadeInUp} className="lg:col-span-3 flex flex-col items-start">
-            <h4 className="text-white text-[17px] font-bold tracking-tight">
-              Our Services
-            </h4>
-            {/* Minimal Orange Underline Accent */}
-            <div className="w-8 h-[2.5px] bg-gradient-to-r from-[#FF7900] to-[#FFA726] rounded-full mt-2.5 mb-5" />
+            {/* COLUMN 3: OUR SERVICES */}
+            <motion.div variants={fadeInUp} className="flex flex-col items-start">
+              <h4 className="text-white text-[17px] font-bold tracking-tight">
+                Our Services
+              </h4>
+              {/* Minimal Orange Underline Accent */}
+              <div className="w-8 h-[2.5px] bg-gradient-to-r from-[#FF7900] to-[#FFA726] rounded-full mt-2.5 mb-5" />
 
-            <ul className="grid grid-cols-1 gap-2.5 w-full">
-              {servicesList.map((service) => (
-                <li key={service.name}>
-                  <Link
-                    href={service.href}
-                    className="group flex items-center justify-between text-[14.5px] text-slate-200 hover:text-[#FF7900] font-normal transition-all duration-300"
-                  >
-                    <span className="group-hover:translate-x-1.5 transition-transform duration-300">
-                      {service.name}
-                    </span>
-                    <ChevronRight className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 group-hover:translate-x-1.5 group-hover:text-[#FF7900] transition-all duration-300" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+              <ul className="grid grid-cols-1 gap-2.5 w-full">
+                {servicesList.map((service) => (
+                  <li key={service.name}>
+                    <Link
+                      href={service.href}
+                      className="group flex items-center justify-between text-[14px] sm:text-[14.5px] text-[#E2E8F0] hover:text-[#FF7900] font-normal transition-all duration-300"
+                    >
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">
+                        {service.name}
+                      </span>
+                      <ChevronRight className="w-3.5 h-3.5 text-[#FF7900]/70 group-hover:text-[#FF7900] group-hover:translate-x-1 transition-all duration-300 shrink-0" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
 
           {/* ---------------------------------------------------- */}
-          {/* COLUMN 4: GET IN TOUCH & CREATIVE TAGLINE (3 Cols)   */}
+          {/* COLUMN 4: GET IN TOUCH, BUSINESS HOURS & TAGLINE     */}
           {/* ---------------------------------------------------- */}
           <motion.div variants={fadeInUp} className="lg:col-span-3 flex flex-col items-start justify-between">
             <div className="w-full">
@@ -259,50 +236,68 @@ export default function Footer() {
 
               {/* Contact Information List */}
               <ul className="space-y-4 w-full">
-                {/* Phone */}
+                {/* Phone Numbers */}
                 <li>
-                  <a
-                    href="tel:+919876543210"
-                    className="group flex items-center gap-3.5 text-[14.5px] text-slate-100 hover:text-[#FF7900] transition-colors duration-300"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-[#FF7900]/20 border border-[#FF7900]/40 flex items-center justify-center text-[#FF7900] group-hover:text-white group-hover:bg-[#FF7900] transition-all duration-300 shadow-sm shrink-0">
+                  <div className="flex items-start gap-3.5 text-[14px] sm:text-[14.5px] text-[#FFFFFF]">
+                    <div className="w-10 h-10 rounded-full bg-[#FF7900]/20 border border-[#FF7900]/40 flex items-center justify-center text-[#FF7900] shadow-sm shrink-0 mt-0.5">
                       <Phone className="w-4 h-4" />
                     </div>
-                    <span className="font-medium tracking-wide">
-                      +91 98765 43210
-                    </span>
-                  </a>
+                    <div className="flex flex-col gap-1">
+                      <a
+                        href="tel:+916352524266"
+                        className="font-semibold tracking-wide text-white hover:text-[#FF7900] transition-colors duration-200"
+                      >
+                        +91 63525 24266
+                      </a>
+                      <a
+                        href="tel:+916351112096"
+                        className="font-semibold tracking-wide text-white hover:text-[#FF7900] transition-colors duration-200"
+                      >
+                        +91 63511 12096
+                      </a>
+                    </div>
+                  </div>
                 </li>
 
                 {/* Email */}
                 <li>
                   <a
-                    href="mailto:info@zeowlinfotech.com"
-                    className="group flex items-center gap-3.5 text-[14.5px] text-slate-100 hover:text-[#38BDF8] transition-colors duration-300"
+                    href="mailto:info.zeowlinfotech@gmail.com"
+                    className="group flex items-center gap-3.5 text-[14px] sm:text-[14.5px] text-[#FFFFFF] hover:text-[#FF7900] transition-colors duration-300"
                   >
                     <div className="w-10 h-10 rounded-full bg-[#168CFF]/20 border border-[#168CFF]/40 flex items-center justify-center text-[#38BDF8] group-hover:text-white group-hover:bg-[#168CFF] transition-all duration-300 shadow-sm shrink-0">
                       <Mail className="w-4 h-4" />
                     </div>
-                    <span className="font-medium tracking-wide break-all">
-                      info@zeowlinfotech.com
+                    <span className="font-medium tracking-wide break-all text-white group-hover:text-[#FF7900] transition-colors">
+                      info.zeowlinfotech@gmail.com
                     </span>
                   </a>
                 </li>
 
                 {/* Location */}
-                <li className="flex items-center gap-3.5 text-[14.5px] text-slate-100">
+                <li className="flex items-center gap-3.5 text-[14px] sm:text-[14.5px] text-[#FFFFFF]">
                   <div className="w-10 h-10 rounded-full bg-[#FF7900]/20 border border-[#FF7900]/40 flex items-center justify-center text-[#FF7900] shadow-sm shrink-0">
                     <MapPin className="w-4 h-4" />
                   </div>
-                  <span className="font-medium leading-snug">
+                  <span className="font-medium leading-snug text-white">
                     Vadodara, Gujarat, India
+                  </span>
+                </li>
+
+                {/* Business Hours */}
+                <li className="flex items-center gap-3.5 text-[14px] sm:text-[14.5px] text-[#CBD5E1]">
+                  <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-slate-300 shadow-sm shrink-0">
+                    <Clock className="w-4 h-4" />
+                  </div>
+                  <span className="text-[13px] sm:text-[13.5px] leading-snug text-slate-300">
+                    Mon - Sat: 9:00 AM - 7:00 PM IST
                   </span>
                 </li>
               </ul>
             </div>
 
             {/* 4. DECORATIVE TAGLINE: "Build • Automate • Grow" */}
-            <div className="mt-8 pt-5 w-full flex items-center justify-start lg:justify-end">
+            <div className="mt-8 pt-4 w-full flex items-center justify-start lg:justify-end">
               <div className="inline-flex flex-col items-start lg:items-end select-none">
                 <div className="flex items-center gap-2">
                   <span
@@ -348,10 +343,10 @@ export default function Footer() {
         {/* ======================================================== */}
         {/* 6. BOTTOM BAR: COPYRIGHT & LEGAL LINKS                   */}
         {/* ======================================================== */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300 font-normal">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#CBD5E1] font-normal">
           {/* Left: Copyright */}
           <div>
-            © 2025{' '}
+            © {new Date().getFullYear()}{' '}
             <span className="text-white font-semibold">Zeowl Infotech</span>. All
             Rights Reserved.
           </div>

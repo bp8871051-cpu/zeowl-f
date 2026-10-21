@@ -139,10 +139,10 @@ export default function OurStory() {
           {/* ======================================================== */}
           <div
             ref={contentRef}
-            className="lg:col-span-6 flex flex-col items-start pl-0 lg:pl-6"
+            className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left pl-0 lg:pl-6"
           >
             {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-4 mx-auto lg:mx-0">
               <div className="w-8 h-[2px] bg-[#F58220] rounded-full" />
               <span className="text-[#F58220] uppercase tracking-[0.2em] text-xs font-bold">
                 OUR STORY
@@ -150,13 +150,13 @@ export default function OurStory() {
             </div>
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-black text-[#071A33] tracking-tight leading-[1.15] mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-black text-[#071A33] tracking-tight leading-[1.15] mb-6 text-center lg:text-left">
               From a Vision to a{' '}
               <span className="text-[#F58220]">Digital Partner</span>
             </h2>
 
             {/* Paragraph */}
-            <p className="text-[#566579] text-base sm:text-lg leading-[1.8] mb-8 font-normal">
+            <p className="text-[#566579] text-base sm:text-lg leading-[1.8] mb-8 font-normal text-center lg:text-left mx-auto lg:mx-0">
               Zeowl Infotech was founded with a simple vision — to help
               businesses grow with the power of technology. What started as a
               passionate team of developers and designers has now grown into a
@@ -165,13 +165,15 @@ export default function OurStory() {
             </p>
 
             {/* CTA */}
-            <a
-              href="#mission-vision"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#071A33] text-white font-semibold text-sm sm:text-base rounded-full shadow-lg shadow-[#071A33]/20 hover:bg-[#F58220] hover:shadow-[#F58220]/25 transition-all duration-300 group cursor-pointer"
-            >
-              <span>Know More</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+            <div className="w-full flex justify-center lg:justify-start">
+              <a
+                href="#mission-vision"
+                className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#071A33] text-white font-semibold text-sm sm:text-base rounded-full shadow-lg shadow-[#071A33]/20 hover:bg-[#F58220] hover:shadow-[#F58220]/25 transition-all duration-300 group cursor-pointer"
+              >
+                <span>Know More</span>
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+            </div>
           </div>
 
         </div>

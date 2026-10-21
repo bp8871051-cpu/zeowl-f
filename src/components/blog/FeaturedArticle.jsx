@@ -58,10 +58,10 @@ export default function FeaturedArticle() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-7 flex flex-col justify-center text-left pl-0 lg:pl-6"
+              className="lg:col-span-7 flex flex-col justify-center items-center lg:items-start text-center lg:text-left pl-0 lg:pl-6"
             >
               {/* Top Badges: [FEATURED] pill + Category Label */}
-              <div className="flex items-center gap-3 mb-4 select-none">
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-4 select-none">
                 <motion.span
                   initial={{ scale: 0.9, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
@@ -77,18 +77,18 @@ export default function FeaturedArticle() {
               </div>
 
               {/* Main Heading */}
-              <h2 className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-[1.18] mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
+              <h2 className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-[1.18] mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)] text-center lg:text-left">
                 How AI Automation Is Transforming Modern Businesses
               </h2>
 
               {/* Description / Excerpt */}
-              <p className="font-body text-white/85 text-sm sm:text-base leading-relaxed mb-6 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)] font-normal">
+              <p className="font-body text-white/85 text-sm sm:text-base leading-relaxed mb-6 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)] font-normal text-center lg:text-left mx-auto lg:mx-0">
                 Discover how AI-powered workflows can reduce repetitive work,
                 improve efficiency and help businesses scale faster.
               </p>
 
               {/* Author & Meta Row */}
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm text-white/80 font-medium mb-7">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-xs sm:text-sm text-white/80 font-medium mb-7">
                 {/* Author Avatar + Name */}
                 <div className="flex items-center gap-2">
                   <div className="w-7 h-7 rounded-full bg-[#f57e20] text-white flex items-center justify-center text-xs font-black shadow-xs">
@@ -117,7 +117,7 @@ export default function FeaturedArticle() {
               </div>
 
               {/* Read Article Button */}
-              <div>
+              <div className="w-full flex justify-center lg:justify-start">
                 <Link
                   href="/blog/ai-automation-transforming-businesses"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#f57e20] hover:bg-white text-white hover:text-[#06182f] font-bold text-sm sm:text-base rounded-full shadow-[0_10px_25px_rgba(245,126,32,0.4)] transition-all duration-300 group/btn cursor-pointer hover:scale-[1.02]"

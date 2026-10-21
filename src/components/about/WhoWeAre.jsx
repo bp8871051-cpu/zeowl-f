@@ -49,11 +49,14 @@ export default function WhoWeAre() {
     <section
       id="who-we-are"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-32 font-sans overflow-hidden bg-white bg-no-repeat bg-cover bg-center"
+      className="relative w-full py-16 sm:py-20 lg:py-32 font-sans overflow-hidden bg-white bg-no-repeat bg-cover bg-[position:25%_center] lg:bg-center"
       style={{
         backgroundImage: "url('/about/who-we-are-banner.png')",
       }}
     >
+      {/* Mobile background soft overlay for clean readability */}
+      <div className="absolute inset-0 bg-white/60 sm:bg-white/40 lg:bg-transparent pointer-events-none" />
+
       {/* Ambient subtle glow for depth */}
       <div className="absolute top-1/2 left-10 -translate-y-1/2 w-[400px] h-[350px] bg-[#F57E20]/[0.025] rounded-full blur-[120px] pointer-events-none" />
 
@@ -71,7 +74,7 @@ export default function WhoWeAre() {
           {/* ======================================================== */}
           <div
             ref={contentRef}
-            className="lg:col-span-6 flex flex-col items-start pl-0 lg:pl-6 relative bg-white/95 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none p-6 sm:p-8 lg:p-0 rounded-2xl lg:rounded-none border border-slate-100 lg:border-none shadow-xl lg:shadow-none"
+            className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left pl-0 lg:pl-6 relative bg-white/95 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none p-6 sm:p-8 lg:p-0 rounded-2xl lg:rounded-none border border-slate-100 lg:border-none shadow-xl lg:shadow-none"
           >
             {/* Soft decorative quotation watermark mark in top-right */}
             <div
@@ -82,21 +85,21 @@ export default function WhoWeAre() {
             </div>
 
             {/* Small Orange Accent Bar */}
-            <div className="w-12 h-1 bg-[#F57E20] rounded-full mb-3" />
+            <div className="w-12 h-1 bg-[#F57E20] rounded-full mb-3 mx-auto lg:mx-0" />
 
             {/* Subtitle: Our Story */}
-            <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#06182F] tracking-tight mb-2">
+            <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#06182F] tracking-tight mb-2 text-center lg:text-left">
               Our Story
             </h3>
 
             {/* Main Title: From a Vision to a Digital Partner */}
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#06182F] tracking-tight leading-[1.15] mb-5">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#06182F] tracking-tight leading-[1.15] mb-5 text-center lg:text-left">
               From a Vision to a{' '}
               <span className="text-[#F57E20] block sm:inline">Digital Partner</span>
             </h2>
 
             {/* Description matching user mockup */}
-            <p className="font-body text-[#566579] text-base sm:text-[17px] leading-[1.8] font-normal mb-8 max-w-xl">
+            <p className="font-body text-[#566579] text-base sm:text-[17px] leading-[1.8] font-normal mb-8 max-w-xl text-center lg:text-left mx-auto lg:mx-0">
               Zeowl Infotech was founded with a simple vision — to help businesses
               grow with the power of technology. What started as a passionate team
               of developers and designers has now grown into a full-service IT
@@ -104,13 +107,15 @@ export default function WhoWeAre() {
             </p>
 
             {/* CTA Button: Know More → */}
-            <a
-              href="#mission-vision"
-              className="font-button inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#F57E20] hover:bg-[#06182F] text-white font-bold text-sm sm:text-base rounded-xl shadow-[0_10px_25px_rgba(245,126,32,0.35)] hover:shadow-[0_10px_25px_rgba(6,24,47,0.3)] transition-all duration-300 group cursor-pointer"
-            >
-              <span>Know More</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-            </a>
+            <div className="w-full flex justify-center lg:justify-start">
+              <a
+                href="#mission-vision"
+                className="font-button inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#F57E20] hover:bg-[#06182F] text-white font-bold text-sm sm:text-base rounded-xl shadow-[0_10px_25px_rgba(245,126,32,0.35)] hover:shadow-[0_10px_25px_rgba(6,24,47,0.3)] transition-all duration-300 group cursor-pointer"
+              >
+                <span>Know More</span>
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+              </a>
+            </div>
           </div>
 
         </div>

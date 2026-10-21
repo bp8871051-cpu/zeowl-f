@@ -52,15 +52,18 @@ export default function PortfolioHero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right lg:object-center opacity-100 select-none filter contrast-[1.02]"
+          className="object-cover object-[75%_center] lg:object-center opacity-40 sm:opacity-65 lg:opacity-100 select-none filter contrast-[1.02] transition-opacity duration-300"
         />
 
         {/* Soft edge blend overlays for smooth seamless integration */}
-        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white via-white/90 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-white via-white/95 to-transparent pointer-events-none" />
 
-        {/* Left-side soft gradient mask ensuring left content is 100% crisp & readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent lg:from-white/90 lg:via-white/40 lg:to-transparent pointer-events-none" />
+        {/* Responsive mobile/tablet background protective overlay */}
+        <div className="absolute inset-0 bg-white/80 sm:bg-white/60 lg:bg-transparent pointer-events-none" />
+
+        {/* Directional gradient mask: vertical blend on mobile, horizontal on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/70 lg:bg-gradient-to-r lg:from-white/95 lg:via-white/70 lg:to-transparent pointer-events-none" />
 
         {/* Ambient warm glow behind the laptop graphic */}
         <div
@@ -82,11 +85,11 @@ export default function PortfolioHero() {
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center text-left"
+            className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left"
           >
             {/* Eyebrow Badge */}
             <motion.div variants={fadeInUp} className="mb-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f57e20]/10 border border-[#f57e20]/25 text-[#f57e20] text-xs font-bold font-mono tracking-wider uppercase backdrop-blur-md">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-[#f57e20]/10 border border-[#f57e20]/25 text-[#f57e20] text-[11px] sm:text-xs font-bold font-mono tracking-wider uppercase backdrop-blur-md">
                 <span className="w-2 h-2 rounded-full bg-[#f57e20] animate-pulse" />
                 <span>OUR WORK • CLIENT PORTFOLIO</span>
               </div>
@@ -95,7 +98,7 @@ export default function PortfolioHero() {
             {/* Main Headline */}
             <motion.h1
               variants={fadeInUp}
-              className="font-heading font-black tracking-[-0.03em] leading-[1.04] text-[38px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[66px] text-[#06182f]"
+              className="font-heading font-black tracking-[-0.03em] leading-[1.08] sm:leading-[1.04] text-[30px] sm:text-[42px] md:text-[52px] lg:text-[60px] xl:text-[66px] text-[#06182f] text-center lg:text-left"
             >
               Ideas Turned Into <br className="hidden sm:inline" />
               <span className="text-[#f57e20]">Real Projects.</span>
@@ -104,7 +107,7 @@ export default function PortfolioHero() {
             {/* Subtitle / Description */}
             <motion.p
               variants={fadeInUp}
-              className="font-body text-[#475569] text-[16px] sm:text-[18px] leading-[1.65] max-w-xl mt-5 mb-7 font-normal"
+              className="font-body text-[#475569] text-[16px] sm:text-[18px] leading-[1.65] max-w-xl mt-5 mb-7 font-normal text-center lg:text-left mx-auto lg:mx-0"
             >
               A glimpse of the high-impact digital solutions, scalable web
               platforms, mobile applications, and AI automation systems we've
@@ -114,7 +117,7 @@ export default function PortfolioHero() {
             {/* Quick Trust Highlights */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-semibold text-[#06182f]/85 mb-8"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-xs sm:text-sm font-semibold text-[#06182f]/85 mb-8"
             >
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#f57e20] shrink-0" />
@@ -133,7 +136,7 @@ export default function PortfolioHero() {
             {/* CTA Buttons */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-wrap items-center gap-3.5"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 w-full"
             >
               <a
                 href="#projects-grid"

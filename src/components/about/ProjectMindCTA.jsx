@@ -75,7 +75,7 @@ export default function ProjectMindCTA() {
       {/* ======================================================== */}
       <div
         ref={bgRef}
-        className="absolute -top-[10%] -bottom-[10%] left-0 right-0 bg-no-repeat bg-cover bg-center pointer-events-none scale-105"
+        className="absolute -top-[10%] -bottom-[10%] left-0 right-0 bg-no-repeat bg-cover bg-center pointer-events-none scale-105 opacity-50 sm:opacity-80 lg:opacity-100 transition-opacity duration-300"
         style={{
           backgroundImage: "url('/about/project-mind-bg.png')",
         }}
@@ -84,7 +84,11 @@ export default function ProjectMindCTA() {
 
       {/* Gentle center glow blend for enhanced typographic clarity */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/5 to-white/40 pointer-events-none"
+        className="absolute inset-0 bg-white/70 sm:bg-white/30 lg:bg-transparent pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/10 to-white/60 pointer-events-none"
         aria-hidden="true"
       />
       <div

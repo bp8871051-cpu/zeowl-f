@@ -118,7 +118,7 @@ export default function ServicesSection() {
               <div className="w-8 h-[2px] bg-[#FF7A18]"></div>
               <span className="text-[#FF7A18] uppercase tracking-wider text-sm font-bold">OUR SERVICES</span>
             </div>
-            <h2 className="text-[#071A35] font-black text-5xl md:text-6xl leading-[1.05] tracking-tight mb-6">
+            <h2 className="text-[#071A35] font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight mb-5 sm:mb-6">
               WE TURN COMPLEX IDEAS<br />
               INTO <span className="text-[#FF7A18]">DIGITAL EXPERIENCES.</span>
             </h2>

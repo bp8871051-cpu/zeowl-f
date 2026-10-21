@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -85,41 +86,66 @@ export default function Navbar() {
 
         {/* Right side spacer to balance layout on desktop, and hamburger on mobile */}
         <div className="flex items-center shrink-0 z-10">
-          {/* Mobile Hamburger Toggle */}
+          {/* Mobile Hamburger / Cross Toggle */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-full hover:bg-neutral-100 transition-colors focus:outline-none cursor-pointer"
+            className="lg:hidden relative flex items-center justify-center w-11 h-11 rounded-full text-[#071A2F] hover:bg-neutral-100 active:scale-95 transition-all duration-200 focus:outline-none cursor-pointer"
           >
-            <span
-              className={`w-5 h-0.5 bg-[#071A2F] rounded-full transition-all duration-300 ${
-                mobileMenuOpen ? 'rotate-45 translate-y-[5px]' : '-translate-y-1'
-              }`}
-            />
-            <span
-              className={`w-5 h-0.5 bg-[#071A2F] rounded-full transition-all duration-300 ${
-                mobileMenuOpen ? 'opacity-0' : 'opacity-100'
-              }`}
-            />
-            <span
-              className={`w-5 h-0.5 bg-[#071A2F] rounded-full transition-all duration-300 ${
-                mobileMenuOpen ? '-rotate-45 -translate-y-[5px]' : 'translate-y-1'
-              }`}
-            />
+            <AnimatePresence mode="wait" initial={false}>
+              {mobileMenuOpen ? (
+                <motion.div
+                  key="close-icon"
+                  initial={{ rotate: -90, opacity: 0, scale: 0.8 }}
+                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                  exit={{ rotate: 90, opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex items-center justify-center"
+                >
+                  <X className="w-6 h-6 text-[#071A2F] stroke-[2.5]" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu-icon"
+                  initial={{ rotate: 90, opacity: 0, scale: 0.8 }}
+                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                  exit={{ rotate: -90, opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex items-center justify-center"
+                >
+                  <Menu className="w-6 h-6 text-[#071A2F] stroke-[2.2]" />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </button>
         </div>
       </nav>
 
-      {/* Mobile Drawer Navigation (7 Centered Links) */}
+      {/* Backdrop overlay for mobile drawer */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setMobileMenuOpen(false)}
+            className="fixed inset-0 bg-black/25 backdrop-blur-[2px] z-40 lg:hidden"
+            aria-hidden="true"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Drawer Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -12, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -12, scale: 0.98 }}
-            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:hidden mt-2 mx-3 p-5 bg-white/95 backdrop-blur-xl border border-neutral-100 rounded-2xl shadow-2xl flex flex-col gap-2"
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="relative z-50 lg:hidden mt-2 mx-3 p-4 sm:p-5 bg-white/95 backdrop-blur-xl border border-neutral-100 rounded-2xl shadow-2xl flex flex-col gap-1.5"
           >
             {navLinks.map((link, idx) => {
               const isActive =
@@ -131,14 +157,14 @@ export default function Navbar() {
                   key={link.name}
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.04, duration: 0.25 }}
+                  transition={{ delay: idx * 0.03, duration: 0.2 }}
                 >
                   <Link
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`px-4 py-2.5 text-base font-semibold rounded-xl transition-all flex items-center justify-between ${
                       isActive
-                        ? 'text-[#F47B20] bg-[#F47B20]/10'
+                        ? 'text-[#F47B20] bg-[#F47B20]/10 font-bold'
                         : 'text-[#071A2F]/85 hover:text-[#F47B20] hover:bg-[#F47B20]/5'
                     }`}
                   >

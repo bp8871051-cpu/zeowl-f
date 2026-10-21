@@ -15,20 +15,22 @@ export default function TestimonialsHero() {
         <img
           src="/testimonials/testimonials-hero-bg.png"
           alt=""
-          className="w-full h-full object-cover object-right-top sm:object-right lg:object-center select-none"
+          className="w-full h-full object-cover object-[75%_center] lg:object-center select-none opacity-40 sm:opacity-65 lg:opacity-100 transition-opacity duration-300"
         />
-        {/* Soft white gradient blend on left side to subtly reduce background artwork opacity for clean, comfortable readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/50 to-transparent w-full sm:w-[85%] lg:w-[60%] pointer-events-none" />
+        {/* Responsive mobile/tablet background protective overlay */}
+        <div className="absolute inset-0 bg-white/80 sm:bg-white/60 lg:bg-transparent pointer-events-none" />
+        {/* Directional gradient mask: vertical blend on mobile, horizontal on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/70 lg:bg-gradient-to-r lg:from-white/95 lg:via-white/75 lg:to-transparent pointer-events-none" />
       </div>
 
       <div className="max-w-[1360px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[460px] lg:min-h-[520px]">
           {/* ======================================================== */}
           {/* Left Column: Heading & Value Proposition                 */}
-          {/* ======================================================== */}
-          <div className="lg:col-span-6 xl:col-span-5 flex flex-col items-start text-left">
+          {/* Left Column: Typography & Action Buttons */}
+          <div className="lg:col-span-6 xl:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
             {/* Eyebrow */}
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center justify-center lg:justify-start gap-2 mb-4 mx-auto lg:mx-0">
               <span className="w-8 h-[2px] bg-[#FF7900]" />
               <span className="text-[#FF7900] font-bold text-xs sm:text-sm uppercase tracking-[0.25em]">
                 CLIENT TESTIMONIALS
@@ -37,19 +39,19 @@ export default function TestimonialsHero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-[56px] xl:text-[62px] font-black text-[#0A1C30] tracking-tight leading-[1.08] mb-6">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[62px] font-black text-[#0A1C30] tracking-tight leading-[1.08] mb-6 text-center lg:text-left">
               Building Success <br />
               <span className="text-[#FF7900]">Together</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="font-body text-[#475569] text-base sm:text-lg lg:text-[18px] leading-relaxed font-normal mb-8 max-w-xl">
+            <p className="font-body text-[#475569] text-base sm:text-lg lg:text-[18px] leading-relaxed font-normal mb-8 max-w-xl text-center lg:text-left mx-auto lg:mx-0">
               Don&apos;t just take our word for it. Here&apos;s what our clients say about
               working with Zeowl Infotech. Real stories. Real results. Real partnerships.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 sm:gap-4 w-full">
               <Link
                 href="/contact"
                 className="font-button inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 bg-[#FF7900] text-white font-bold text-sm sm:text-base rounded-full shadow-[0_10px_25px_rgba(255,121,0,0.38)] hover:bg-[#0A1C30] hover:shadow-[0_12px_30px_rgba(10,28,48,0.25)] transition-all duration-300 group cursor-pointer"

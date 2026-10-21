@@ -74,8 +74,8 @@ const HowWeWorkSection = () => {
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-24">
           
           {/* Left Side: Headline */}
-          <div className="lg:max-w-2xl w-full">
-            <div className="flex items-center gap-4 mb-6">
+          <div className="lg:max-w-2xl w-full text-center lg:text-left flex flex-col items-center lg:items-start">
+            <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
               <span className="text-[#0052ff] font-bold text-lg">04.</span>
               <div className="w-12 h-[2px] bg-gray-300"></div>
               <span className="text-gray-500 font-semibold tracking-widest text-sm uppercase">How We Work</span>
@@ -87,15 +87,17 @@ const HowWeWorkSection = () => {
           </div>
 
           {/* Right Side: Approach & CTA */}
-          <div className="lg:max-w-md w-full flex flex-col items-start lg:pt-8 border-l-2 border-gray-200 pl-6 sm:pl-8 relative">
+          <div className="lg:max-w-md w-full flex flex-col items-center lg:items-start text-center lg:text-left lg:pt-8 border-l-0 lg:border-l-2 border-gray-200 pl-0 lg:pl-8 relative">
             <span className="text-gray-400 font-bold text-xs uppercase tracking-wider mb-4">Our Approach</span>
             <p className="text-gray-600 text-sm leading-relaxed mb-6 font-medium">
               We follow a transparent and proven process to turn your ideas into powerful digital solutions. From understanding your goals to ongoing support, we ensure a smooth and collaborative journey.
             </p>
-            <button className="flex items-center gap-3 text-[#0052ff] font-semibold text-sm border border-[#0052ff] rounded-full px-6 py-2.5 hover:bg-[#0052ff] hover:text-white transition-all duration-300">
-              Let's Work Together 
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </button>
+            <div className="w-full flex justify-center lg:justify-start">
+              <button className="flex items-center gap-3 text-[#0052ff] font-semibold text-sm border border-[#0052ff] rounded-full px-6 py-2.5 hover:bg-[#0052ff] hover:text-white transition-all duration-300 cursor-pointer">
+                Let's Work Together 
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>

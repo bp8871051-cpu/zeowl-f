@@ -251,11 +251,11 @@ export default function ServiceHero({ service }) {
         {/* Content Container */}
         <div className="relative z-10 max-w-[88rem] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Breadcrumb, Eyebrow, Big Headline, Description, Dual Buttons */}
-          <div className="lg:col-span-7 xl:col-span-6 flex flex-col items-start max-w-2xl">
+          <div className="lg:col-span-7 xl:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
             {/* Breadcrumb */}
             <div
               ref={breadcrumbRef}
-              className="flex items-center gap-2 text-xs font-mono font-medium tracking-wider text-slate-500 uppercase mb-3 sm:mb-5"
+              className="flex items-center justify-center lg:justify-start gap-2 text-xs font-mono font-medium tracking-wider text-slate-500 uppercase mb-3 sm:mb-5"
             >
               <Link href="/" className="hover:text-[#0A1C30] transition-colors">
                 HOME
@@ -273,7 +273,7 @@ export default function ServiceHero({ service }) {
             {/* Eyebrow */}
             <div
               ref={eyebrowRef}
-              className="flex items-center gap-2 text-xs sm:text-[13px] font-bold tracking-[0.2em] text-[#FF7900] uppercase mb-3.5 sm:mb-4"
+              className="flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-[13px] font-bold tracking-[0.2em] text-[#FF7900] uppercase mb-3.5 sm:mb-4 mx-auto lg:mx-0"
             >
               <span className="w-4 sm:w-6 h-[2px] bg-[#FF7900] inline-block rounded-full" />
               <span>{service.eyebrow || `${service.title.toUpperCase()} SERVICES`}</span>
@@ -283,7 +283,7 @@ export default function ServiceHero({ service }) {
             {/* Headline */}
             <h1
               ref={headingRef}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-black text-[#0A1C30] tracking-tight leading-[1.14] sm:leading-[1.12] mb-4 sm:mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-black text-[#0A1C30] tracking-tight leading-[1.14] sm:leading-[1.12] mb-4 sm:mb-6 text-center lg:text-left"
             >
               {service.heroHeadlineClean?.line1 || service.heroHeadline?.line1 || 'Websites Built to'}
               <br className="hidden sm:inline" />{' '}
@@ -298,7 +298,7 @@ export default function ServiceHero({ service }) {
             {/* Description */}
             <p
               ref={descRef}
-              className="text-sm sm:text-base md:text-lg text-slate-600 font-normal leading-relaxed max-w-xl mb-6 sm:mb-10"
+              className="text-sm sm:text-base md:text-lg text-slate-600 font-normal leading-relaxed max-w-xl mb-6 sm:mb-10 text-center lg:text-left mx-auto lg:mx-0"
             >
               {service.heroDescription}
             </p>
@@ -306,7 +306,7 @@ export default function ServiceHero({ service }) {
             {/* CTA Buttons */}
             <div
               ref={ctaRef}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-5 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5 sm:gap-5 w-full"
             >
               <Link
                 href="#contact"

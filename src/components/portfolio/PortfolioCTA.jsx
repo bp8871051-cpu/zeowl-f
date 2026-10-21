@@ -47,7 +47,7 @@ export default function PortfolioCTA() {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 w-full">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#f57e20] hover:bg-white text-white hover:text-[#06182f] font-bold text-sm sm:text-base rounded-full shadow-[0_10px_25px_rgba(245,126,32,0.45)] transition-all duration-300 group cursor-pointer"

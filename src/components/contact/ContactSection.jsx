@@ -148,7 +148,8 @@ export default function ContactSection({ isTopSection = false }) {
     } catch (err) {
       console.error('Contact submission error:', err);
       setErrorMessage(
-        err.message || 'Unable to connect to the backend server. Please verify backend is running on http://localhost:8000'
+        err.message ||
+          'Unable to submit your inquiry right now. Please try again or email us directly at info.zeowlinfotech@gmail.com'
       );
     } finally {
       setIsSubmitting(false);
@@ -185,11 +186,13 @@ export default function ContactSection({ isTopSection = false }) {
         <img
           src="/contact-bg.png"
           alt="Zeowl Contact Us Background"
-          className="w-full h-full object-cover object-[75%_center] lg:object-right-top block"
+          className="w-full h-full object-cover object-[75%_center] lg:object-right-top block opacity-40 sm:opacity-65 lg:opacity-100 transition-opacity duration-300"
           loading="eager"
         />
-        {/* Responsive white & gradient blend ensuring total contrast readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/30 lg:via-white/70 lg:to-transparent pointer-events-none" />
+        {/* Responsive mobile/tablet background protective overlay */}
+        <div className="absolute inset-0 bg-white/80 sm:bg-white/60 lg:bg-transparent pointer-events-none" />
+        {/* Directional gradient mask: vertical blend on mobile, horizontal on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/70 lg:bg-gradient-to-r lg:from-white/95 lg:via-white/70 lg:to-transparent pointer-events-none" />
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white to-transparent pointer-events-none" />
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none" />
       </div>
@@ -219,7 +222,7 @@ export default function ContactSection({ isTopSection = false }) {
             </div>
 
             {/* Main heading */}
-            <h1 className="hero-heading font-heading text-4xl sm:text-5xl lg:text-[54px] font-black text-[#06182f] tracking-tight leading-[1.12] mb-5">
+            <h1 className="hero-heading font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black text-[#06182f] tracking-tight leading-[1.12] mb-5">
               Let’s Build Something <br className="hidden sm:inline" />
               Great <span className="text-[#f57e20]">Together.</span>
             </h1>

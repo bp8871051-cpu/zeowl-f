@@ -127,7 +127,7 @@ export default function BlogCTA() {
             </div>
 
             {/* Right: Newsletter Input Form */}
-            <div className="flex flex-col items-start lg:items-end">
+            <div className="flex flex-col items-center lg:items-end w-full lg:w-auto">
               {subscribed ? (
                 <div className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-emerald-500/25 border border-emerald-400/40 text-emerald-100 text-xs sm:text-sm font-bold backdrop-blur-md">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400" />

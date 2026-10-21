@@ -92,7 +92,7 @@ export default function WhyZeowl() {
         {/* Strong Dark Navy Headline */}
         <h2
           data-why-heading
-          className="font-extrabold tracking-[-0.03em] leading-[1.04] sm:leading-[1.06] text-[34px] sm:text-[46px] md:text-[54px] lg:text-[62px] xl:text-[66px] text-[#071A36] max-w-4xl mx-auto"
+          className="font-extrabold tracking-[-0.03em] leading-[1.08] sm:leading-[1.06] text-[28px] sm:text-[42px] md:text-[52px] lg:text-[62px] xl:text-[66px] text-[#071A36] max-w-4xl mx-auto"
         >
           Built for Results.{' '}
           <span className="text-[#071A36] block sm:inline">

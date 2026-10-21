@@ -52,16 +52,18 @@ export default function ServicesShowcaseSection() {
         <img
           src="/services-showcase-bg.jpg"
           alt="Zeowl Digital Services 3D Showcase"
-          className="w-full h-full object-cover object-[75%_center] md:object-[70%_center] lg:object-center opacity-100"
+          className="w-full h-full object-cover object-[75%_center] md:object-[70%_center] lg:object-right xl:object-center opacity-40 sm:opacity-65 lg:opacity-100 transition-opacity duration-300"
         />
-        {/* Luminous soft white backdrop strictly on the left for text readability, leaving the right side 100% vivid & untouched */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.65)_32%,rgba(255,255,255,0.08)_50%,transparent_58%)] pointer-events-none" />
+        {/* Responsive mobile/tablet background protective overlay */}
+        <div className="absolute inset-0 bg-white/80 sm:bg-white/60 lg:bg-transparent pointer-events-none" />
+        {/* Directional gradient mask: vertical blend on mobile, horizontal on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/70 lg:bg-[linear-gradient(to_right,rgba(255,255,255,0.96)_0%,rgba(255,255,255,0.88)_26%,rgba(255,255,255,0.18)_42%,transparent_54%)] pointer-events-none" />
         <div className="absolute -left-12 top-1/2 -translate-y-1/2 w-[580px] h-[520px] bg-white/60 blur-[75px] rounded-full pointer-events-none" />
       </div>
 
-      {/* Content Container (Positioned on the Left half to complement the 3D graphics on the right) */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="max-w-xl lg:max-w-2xl" ref={contentRef}>
+      {/* Content Container (Positioned on the Left with comfortable breathing room from the 3D graphics on the right) */}
+      <div className="relative z-10 w-[94%] max-w-[1540px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="max-w-xl lg:max-w-[530px] xl:max-w-[580px] flex flex-col items-center lg:items-start text-center lg:text-left" ref={contentRef}>
           
           {/* Eyebrow Pill */}
           <div className="showcase-reveal-item inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#06182F]/15 text-xs font-mono-tech uppercase tracking-widest text-[#F47B20] font-bold mb-6 shadow-sm">
@@ -70,7 +72,7 @@ export default function ServicesShowcaseSection() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="showcase-reveal-item text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-heading font-black tracking-tight text-[#06182F] leading-[1.12] mb-6 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]">
+          <h1 className="showcase-reveal-item text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-heading font-black tracking-tight text-[#06182F] leading-[1.12] mb-6 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]">
             Transforming Ideas Into <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-[#F47B20] via-[#E86714] to-[#C8550B] bg-clip-text text-transparent">
               Scalable Digital Realities
@@ -78,7 +80,7 @@ export default function ServicesShowcaseSection() {
           </h1>
 
           {/* Divider */}
-          <div className="showcase-reveal-item h-[3.5px] w-20 bg-[#F47B20] rounded-full shadow-[0_2px_8px_rgba(244,123,32,0.4)] mb-6" />
+          <div className="showcase-reveal-item h-[3.5px] w-20 bg-[#F47B20] rounded-full shadow-[0_2px_8px_rgba(244,123,32,0.4)] mb-6 mx-auto lg:mx-0" />
 
           {/* Subheading / Description - Darker, bolder, high-contrast text */}
           <p className="showcase-reveal-item text-base sm:text-lg md:text-xl text-[#06182F] font-semibold leading-relaxed mb-8 drop-shadow-[0_1px_1px_rgba(255,255,255,0.85)]">
@@ -86,50 +88,50 @@ export default function ServicesShowcaseSection() {
           </p>
 
           {/* Feature Badges matching the 4 visual icons in the graphic */}
-          <div className="showcase-reveal-item grid grid-cols-2 gap-3 sm:gap-4 mb-8">
+          <div className="showcase-reveal-item grid grid-cols-2 gap-3 sm:gap-4 mb-8 w-full text-left">
             <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#06182F]/15 shadow-sm hover:border-[#F47B20]/60 transition-colors">
-              <div className="w-9 h-9 rounded-lg bg-[#F47B20]/15 flex items-center justify-center text-[#F47B20]">
+              <div className="w-9 h-9 rounded-lg bg-[#F47B20]/15 flex items-center justify-center text-[#F47B20] shrink-0">
                 <Layers className="w-5 h-5" />
               </div>
               <div>
                 <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">UI/UX Design</div>
-                <div className="text-xs text-[#06182F]/80 font-mono-tech font-bold">Human-Centered</div>
+                <div className="text-[11px] sm:text-xs text-[#06182F]/80 font-mono-tech font-bold">Human-Centered</div>
               </div>
             </div>
 
             <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#06182F]/15 shadow-sm hover:border-[#F47B20]/60 transition-colors">
-              <div className="w-9 h-9 rounded-lg bg-[#F47B20]/15 flex items-center justify-center text-[#F47B20]">
+              <div className="w-9 h-9 rounded-lg bg-[#F47B20]/15 flex items-center justify-center text-[#F47B20] shrink-0">
                 <Code2 className="w-5 h-5" />
               </div>
               <div>
                 <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">Web &amp; Software</div>
-                <div className="text-xs text-[#06182F]/80 font-mono-tech font-bold">Full-Stack Tech</div>
+                <div className="text-[11px] sm:text-xs text-[#06182F]/80 font-mono-tech font-bold">Full-Stack Tech</div>
               </div>
             </div>
 
             <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#06182F]/15 shadow-sm hover:border-[#F47B20]/60 transition-colors">
-              <div className="w-9 h-9 rounded-lg bg-[#F47B20]/15 flex items-center justify-center text-[#F47B20]">
+              <div className="w-9 h-9 rounded-lg bg-[#F47B20]/15 flex items-center justify-center text-[#F47B20] shrink-0">
                 <TrendingUp className="w-5 h-5" />
               </div>
               <div>
                 <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">Digital Growth</div>
-                <div className="text-xs text-[#06182F]/80 font-mono-tech font-bold">Data &amp; Scale</div>
+                <div className="text-[11px] sm:text-xs text-[#06182F]/80 font-mono-tech font-bold">Data &amp; Scale</div>
               </div>
             </div>
 
             <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#06182F]/15 shadow-sm hover:border-[#F47B20]/60 transition-colors">
-              <div className="w-9 h-9 rounded-lg bg-[#F47B20]/15 flex items-center justify-center text-[#F47B20]">
+              <div className="w-9 h-9 rounded-lg bg-[#F47B20]/15 flex items-center justify-center text-[#F47B20] shrink-0">
                 <Cpu className="w-5 h-5" />
               </div>
               <div>
                 <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">AI &amp; Automation</div>
-                <div className="text-xs text-[#06182F]/80 font-mono-tech font-bold">Smart Pipelines</div>
+                <div className="text-[11px] sm:text-xs text-[#06182F]/80 font-mono-tech font-bold">Smart Pipelines</div>
               </div>
             </div>
           </div>
 
           {/* CTA & Placeholder Ready indicator */}
-          <div className="showcase-reveal-item flex flex-wrap items-center gap-4">
+          <div className="showcase-reveal-item flex flex-wrap items-center justify-center lg:justify-start gap-4 w-full">
             <Link
               href="/contact"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#F47B20] text-white font-button font-bold text-sm hover:bg-[#06182F] shadow-lg shadow-[#F47B20]/30 transition-all duration-300 group"

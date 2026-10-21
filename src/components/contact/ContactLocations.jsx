@@ -5,10 +5,10 @@ import { MapPin, Globe, Clock, ExternalLink, Building, Compass } from 'lucide-re
 
 const locations = [
   {
-    city: 'Vadodara & Surat',
+    city: 'Vadodara',
     country: 'Gujarat, India',
     type: 'Headquarters & Engineering Lab',
-    address: 'Vadodara & Surat Tech Corridor, Gujarat 395007, India',
+    address: 'Vadodara, Gujarat, India',
     timezone: 'Asia/Kolkata (IST • UTC+5:30)',
     hours: 'Mon - Sat: 9:30 AM – 7:30 PM',
     mapLink: 'https://maps.google.com/?q=Vadodara+Gujarat+India',

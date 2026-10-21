@@ -47,15 +47,18 @@ export default function BlogHero({
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right lg:object-center select-none filter contrast-[1.02]"
+          className="object-cover object-[75%_center] lg:object-center opacity-40 sm:opacity-65 lg:opacity-100 select-none filter contrast-[1.02] transition-opacity duration-300"
         />
 
         {/* Soft edge blend overlays for seamless header & section transitions */}
-        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white via-white/85 to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white via-white/90 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/95 to-transparent pointer-events-none" />
 
-        {/* Left-side soft gradient mask ensuring left typography is 100% crisp & readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent lg:from-white/90 lg:via-white/35 lg:to-transparent pointer-events-none" />
+        {/* Responsive mobile/tablet background protective overlay */}
+        <div className="absolute inset-0 bg-white/80 sm:bg-white/60 lg:bg-transparent pointer-events-none" />
+
+        {/* Directional gradient mask: vertical blend on mobile, horizontal on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/70 lg:bg-gradient-to-r lg:from-white/95 lg:via-white/70 lg:to-transparent pointer-events-none" />
 
         {/* Ambient warm glow behind the laptop & lightbulb graphic */}
         <div
@@ -77,11 +80,11 @@ export default function BlogHero({
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center text-left"
+            className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left"
           >
             {/* Eyebrow Badge */}
             <motion.div variants={fadeInUp} className="mb-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f57e20]/10 border border-[#f57e20]/25 text-[#f57e20] text-xs font-bold font-mono tracking-wider uppercase backdrop-blur-md">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-[#f57e20]/10 border border-[#f57e20]/25 text-[#f57e20] text-[11px] sm:text-xs font-bold font-mono tracking-wider uppercase backdrop-blur-md">
                 <Sparkles className="w-3.5 h-3.5 text-[#f57e20]" />
                 <span>INSIGHTS &amp; PERSPECTIVES • ZEOWL BLOG</span>
               </div>
@@ -90,7 +93,7 @@ export default function BlogHero({
             {/* Main Headline */}
             <motion.h1
               variants={fadeInUp}
-              className="font-heading font-black tracking-[-0.03em] leading-[1.05] text-[36px] sm:text-[46px] md:text-[54px] lg:text-[58px] xl:text-[64px] text-[#06182f]"
+              className="font-heading font-black tracking-[-0.03em] leading-[1.08] sm:leading-[1.05] text-[30px] sm:text-[40px] md:text-[50px] lg:text-[58px] xl:text-[64px] text-[#06182f] text-center lg:text-left"
             >
               Ideas, Insights &amp; <br className="hidden sm:inline" />
               <span className="text-[#f57e20]">Engineering Trends.</span>
@@ -99,7 +102,7 @@ export default function BlogHero({
             {/* Subtitle / Description */}
             <motion.p
               variants={fadeInUp}
-              className="font-body text-[#475569] text-[16px] sm:text-[18px] leading-[1.65] max-w-xl mt-5 mb-7 font-normal"
+              className="font-body text-[#475569] text-[16px] sm:text-[18px] leading-[1.65] max-w-xl mt-5 mb-7 font-normal text-center lg:text-left mx-auto lg:mx-0"
             >
               Actionable technology guides, full-stack architecture deep dives,
               AI automation strategies, and UI/UX design perspectives curated by
@@ -135,7 +138,7 @@ export default function BlogHero({
             {/* Quick Filter Tags */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-wrap items-center gap-2 mb-8 text-xs font-medium"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-8 text-xs font-medium"
             >
               <span className="text-[#64748B] font-mono font-bold uppercase tracking-wider mr-1">
                 Trending:
@@ -160,7 +163,7 @@ export default function BlogHero({
             {/* Trust Highlights */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-semibold text-[#06182f]/85 pt-4 border-t border-[#06182f]/[0.08]"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-xs sm:text-sm font-semibold text-[#06182f]/85 pt-4 border-t border-[#06182f]/[0.08]"
             >
               <div className="flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-[#f57e20] shrink-0" />

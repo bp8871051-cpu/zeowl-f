@@ -20,12 +20,12 @@ export default function Page() {
         <main className="max-w-7xl w-full z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
 
           {/* Left Column: Typography & CTAs */}
-          <div className="text-left flex flex-col items-start justify-center pt-8 sm:pt-12 lg:pt-0 mt-6 sm:mt-12 lg:mt-20">
-            <h2 className="text-brand-orange font-semibold tracking-widest uppercase text-xs sm:text-sm mb-4 sm:mb-6">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left justify-center pt-8 sm:pt-12 lg:pt-0 mt-6 sm:mt-12 lg:mt-20">
+            <h2 className="text-brand-orange font-semibold tracking-widest uppercase text-xs sm:text-sm mb-4 sm:mb-6 text-center lg:text-left">
               Welcome to Zeowl Infotech
             </h2>
 
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[5rem] font-bold tracking-tight mb-6 sm:mb-8 leading-[1.08] sm:leading-[1.05]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[5rem] font-bold tracking-tight mb-6 sm:mb-8 leading-[1.08] sm:leading-[1.05] text-center lg:text-left">
               <div className="overflow-hidden pb-1 sm:pb-2">
                 <div className="animate-slide-up [animation-delay:200ms]">ENGINEERING</div>
               </div>
@@ -37,16 +37,18 @@ export default function Page() {
               </div>
             </h1>
 
-            <p className="text-brand-navy/70 text-base sm:text-lg md:text-xl max-w-lg mb-8 sm:mb-10 font-light leading-relaxed">
+            <p className="text-brand-navy/70 text-base sm:text-lg md:text-xl max-w-lg mb-8 sm:mb-10 font-light leading-relaxed text-center lg:text-left mx-auto lg:mx-0">
               We craft premium digital experiences and engineer scalable, automated tech solutions for ambitious brands.
             </p>
 
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-7 sm:px-8 py-3.5 sm:py-4 bg-brand-orange text-white font-semibold rounded-full hover:bg-brand-navy shadow-lg shadow-brand-orange/20 hover:shadow-brand-navy/20 transition-all duration-300 text-sm sm:text-base"
-            >
-              Start a Project
-            </Link>
+            <div className="w-full flex justify-center lg:justify-start">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-7 sm:px-8 py-3.5 sm:py-4 bg-brand-orange text-white font-semibold rounded-full hover:bg-brand-navy shadow-lg shadow-brand-orange/20 hover:shadow-brand-navy/20 transition-all duration-300 text-sm sm:text-base cursor-pointer"
+              >
+                Start a Project
+              </Link>
+            </div>
           </div>
 
           {/* Right Column: Orbiting Tech Stack */}
@@ -135,8 +137,8 @@ export default function Page() {
               {/* Orbital Rings */}
               <div className="absolute inset-0 m-auto w-[90%] h-[90%] border border-[#EEF1F4] rounded-full"></div>
               <div className="absolute inset-0 m-auto w-[65%] h-[65%] border-2 border-[#E2E8F0] border-dashed rounded-full animate-[spin_40s_linear_infinite]"></div>
-              <div className="absolute inset-0 m-auto w-[36%] h-[36%] bg-white rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.03)] flex items-center justify-center border border-[#EEF1F4]/50 z-10">
-                <img src="/logo/ZEOWL.png" alt="Zeowl" className="h-24 w-auto object-contain" />
+              <div className="absolute inset-0 m-auto w-[36%] h-[36%] bg-white rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.03)] flex items-center justify-center border border-[#EEF1F4]/50 z-10 p-2 sm:p-3">
+                <img src="/logo/ZEOWL.png" alt="Zeowl" className="h-12 sm:h-18 lg:h-22 max-w-[85%] w-auto object-contain" />
               </div>
 
               {/* Dotted points / Glows */}

@@ -83,7 +83,7 @@ export default function AboutCTA() {
           {/* CTAs */}
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto mb-10">
             <a
-              href="mailto:info@zeowlinfotech.com"
+              href="mailto:info.zeowlinfotech@gmail.com"
               className="font-button inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#F57E20] text-white font-bold text-base rounded-full shadow-[0_0_35px_rgba(245,126,32,0.4)] hover:bg-white hover:text-[#06182F] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all duration-300 group cursor-pointer"
             >
               <span>Start a Conversation</span>
@@ -91,7 +91,7 @@ export default function AboutCTA() {
             </a>
 
             <a
-              href="tel:+919876543210"
+              href="tel:+916352524266"
               className="font-button inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/20 font-bold text-base rounded-full hover:bg-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer backdrop-blur-md"
             >
               <Phone className="w-4 h-4 text-[#F57E20]" />

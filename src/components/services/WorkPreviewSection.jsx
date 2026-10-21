@@ -84,7 +84,7 @@ export default function WorkPreviewSection() {
           </div>
           <Link
             href="/#work"
-            className="inline-flex items-center gap-2 text-sm font-button font-bold text-[#F47B20] hover:text-[#071A2F] transition-colors group"
+            className="inline-flex items-center gap-2 text-sm font-button font-bold text-[#F47B20] hover:text-[#071A2F] transition-colors group self-center md:self-auto"
           >
             <span>View All Case Studies</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

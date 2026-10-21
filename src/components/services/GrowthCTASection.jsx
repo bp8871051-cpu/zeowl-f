@@ -248,17 +248,18 @@ export default function GrowthCTASection() {
         ref={bannerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative max-w-[1400px] w-full mx-auto rounded-[28px] sm:rounded-[32px] overflow-hidden bg-[#0A1A32] shadow-[0_25px_70px_rgba(7,26,47,0.35)] p-8 sm:p-12 lg:p-14 xl:p-[64px] border border-white/15 select-none"
+        className="relative max-w-[1400px] w-full mx-auto rounded-[24px] sm:rounded-[32px] overflow-hidden bg-[#0A1A32] shadow-[0_25px_70px_rgba(7,26,47,0.35)] p-6 sm:p-10 lg:p-14 xl:p-[64px] border border-white/15 select-none"
       >
         {/* Background Image: Panoramic Mountain Climbing Summit */}
         <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-0">
           <img
             src="/lets-build-bg.png"
             alt="Let's Build Something Great - Team Mountain Climbing"
-            className="w-full h-full object-cover object-[70%_center] lg:object-right xl:object-center"
+            className="w-full h-full object-cover object-[70%_center] lg:object-right xl:object-center opacity-60 sm:opacity-85 lg:opacity-100"
           />
           {/* Deep dark gradient on the left side to guarantee 100% crisp legibility of all text and buttons */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#040C1A]/95 via-[#040C1A]/85 via-48% to-transparent to-75% pointer-events-none" />
+          <div className="absolute inset-0 bg-[#040C1A]/80 sm:bg-[#040C1A]/60 lg:hidden pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#040C1A]/95 via-[#040C1A]/85 via-48% to-transparent to-75% pointer-events-none hidden lg:block" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#040C1A]/70 via-transparent to-transparent pointer-events-none lg:hidden" />
         </div>
 
@@ -325,7 +326,7 @@ export default function GrowthCTASection() {
             </p>
 
             {/* 4. CTA Buttons (Primary & Secondary) */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 mb-10 w-full">
               {/* PRIMARY BUTTON */}
               <a
                 ref={primaryBtnRef}

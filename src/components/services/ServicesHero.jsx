@@ -195,7 +195,7 @@ export default function ServicesHero() {
         {/* ========================================================================= */}
         {/* LEFT COLUMN: HERO CONTENT                                                 */}
         {/* ========================================================================= */}
-        <div ref={leftContentRef} className="lg:col-span-6 flex flex-col justify-center">
+        <div ref={leftContentRef} className="lg:col-span-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
           {/* Eyebrow badge */}
           <div className="hero-stagger-item inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.08] border border-white/15 backdrop-blur-md w-fit mb-6 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-[#F47B20] animate-pulse shadow-[0_0_8px_#F47B20]" />
@@ -207,7 +207,7 @@ export default function ServicesHero() {
           {/* Main Heading */}
           <h1
             ref={headingRef}
-            className="hero-stagger-item text-4xl sm:text-5xl xl:text-6xl font-heading font-extrabold tracking-tight text-white leading-[1.1] mb-6"
+            className="hero-stagger-item text-4xl sm:text-5xl xl:text-6xl font-heading font-extrabold tracking-tight text-white leading-[1.1] mb-6 text-center lg:text-left"
           >
             Powering Businesses <br />
             With <span className="text-[#F47B20] relative inline-block">
@@ -229,12 +229,12 @@ export default function ServicesHero() {
           </h1>
 
           {/* Supporting Text */}
-          <p className="hero-stagger-item text-base sm:text-lg text-white/75 font-body leading-relaxed max-w-xl mb-9">
+          <p className="hero-stagger-item text-base sm:text-lg text-white/75 font-body leading-relaxed max-w-xl mb-9 text-center lg:text-left mx-auto lg:mx-0">
             From websites and software to AI automation and digital growth, we build powerful digital solutions that help businesses move faster, work smarter and grow with confidence.
           </p>
 
           {/* CTA Buttons */}
-          <div className="hero-stagger-item flex flex-wrap items-center gap-4 mb-12">
+          <div className="hero-stagger-item flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-12 w-full">
             <MagneticButton
               href="#services-grid"
               className="px-7 py-3.5 bg-[#F47B20] hover:bg-[#ff8930] text-white rounded-full shadow-[0_10px_30px_rgba(244,123,32,0.35)] hover:shadow-[0_15px_35px_rgba(244,123,32,0.5)] transition-all flex items-center gap-2 group text-sm md:text-base"
@@ -252,7 +252,7 @@ export default function ServicesHero() {
           </div>
 
           {/* Trust Row Counters */}
-          <div className="hero-stagger-item pt-8 border-t border-white/10 grid grid-cols-3 gap-4 sm:gap-6">
+          <div className="hero-stagger-item pt-8 border-t border-white/10 grid grid-cols-3 gap-4 sm:gap-6 w-full text-center lg:text-left">
             <div>
               <div
                 ref={counterClients}

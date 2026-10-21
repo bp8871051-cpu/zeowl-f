@@ -102,7 +102,7 @@ export default function AboutHero() {
     >
       {/* ======================================================== */}
       {/* 1. HIGH-DEFINITION 3D ABOUT HERO BACKGROUND ARTWORK      */}
-      {/* Left: Graphic White Pattern | Right: 3D Zeowl Office Wall*/}
+      {/* Left: Clean white backdrop | Right: 3D Office Brand Wall */}
       {/* ======================================================== */}
       <div className="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden z-0">
         <Image
@@ -111,15 +111,18 @@ export default function AboutHero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right lg:object-center select-none filter contrast-[1.02]"
+          className="object-cover object-[75%_center] lg:object-center select-none filter contrast-[1.02] opacity-40 sm:opacity-65 lg:opacity-100 transition-opacity duration-300"
         />
 
         {/* Soft edge blend overlays for seamless integration */}
-        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white via-white/90 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-white via-white/95 to-transparent pointer-events-none" />
 
-        {/* Left-side soft gradient mask ensuring left content is 100% crisp & readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-transparent lg:from-white/90 lg:via-white/40 lg:to-transparent pointer-events-none" />
+        {/* Responsive mobile/tablet background protective overlay for pristine text readability */}
+        <div className="absolute inset-0 bg-white/80 sm:bg-white/60 lg:bg-transparent pointer-events-none" />
+
+        {/* Directional gradient mask: vertical blend on mobile, horizontal on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/70 lg:bg-gradient-to-r lg:from-white/95 lg:via-white/70 lg:to-transparent pointer-events-none" />
 
         {/* Ambient warm glow behind the corporate logo area */}
         <div
@@ -138,12 +141,12 @@ export default function AboutHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Typography, Breadcrumb, CTAs */}
-          <div className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center text-left">
+          <div className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
             
             {/* Small Orange / Brand Accent Label */}
             <div
               ref={labelRef}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F57E20]/10 border border-[#F57E20]/25 text-[#F57E20] text-xs font-bold font-mono tracking-wider uppercase mb-4 w-fit select-none backdrop-blur-md"
+              className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-[#F57E20]/10 border border-[#F57E20]/25 text-[#F57E20] text-[11px] sm:text-xs font-bold font-mono tracking-wider uppercase mb-4 w-fit select-none backdrop-blur-md"
             >
               <span className="w-2 h-2 rounded-full bg-[#F57E20] animate-pulse" />
               <span>ABOUT US • ZEOWL INFOTECH</span>
@@ -152,7 +155,7 @@ export default function AboutHero() {
             {/* Breadcrumb: Home → About Us */}
             <div
               ref={breadcrumbRef}
-              className="flex items-center gap-2 text-xs sm:text-sm font-medium text-[#06182F]/70 mb-5"
+              className="flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm font-medium text-[#06182F]/70 mb-4 sm:mb-5"
             >
               <Link
                 href="/"
@@ -164,10 +167,10 @@ export default function AboutHero() {
               <span className="text-[#06182F] font-semibold">About Us</span>
             </div>
 
-            {/* Large Premium Heading */}
+            {/* Large Premium Responsive Heading */}
             <h1
               ref={headingRef}
-              className="font-heading font-black tracking-[-0.03em] leading-[1.05] text-[38px] sm:text-[48px] md:text-[56px] lg:text-[60px] xl:text-[66px] text-[#06182F] mb-6"
+              className="font-heading font-black tracking-[-0.03em] leading-[1.08] sm:leading-[1.05] text-[30px] sm:text-[42px] md:text-[52px] lg:text-[58px] xl:text-[66px] text-[#06182F] mb-5 sm:mb-6 text-center lg:text-left"
             >
               <span className="block overflow-hidden pb-1">
                 <span className="split-line block">Driven by Ideas.</span>
@@ -182,7 +185,7 @@ export default function AboutHero() {
             {/* Supporting Paragraph */}
             <p
               ref={paraRef}
-              className="font-body text-[#475569] text-[16px] sm:text-[18px] leading-[1.65] max-w-xl mb-7 font-normal"
+              className="font-body text-[#475569] text-[15px] sm:text-[17px] md:text-[18px] leading-[1.65] max-w-xl mb-6 sm:mb-7 font-normal text-center lg:text-left mx-auto lg:mx-0"
             >
               We transform ideas into powerful digital solutions that help
               businesses grow, automate processes and stay ahead in an evolving
@@ -192,7 +195,7 @@ export default function AboutHero() {
             {/* Quick Trust Highlights */}
             <div
               ref={highlightsRef}
-              className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-semibold text-[#06182F]/85 mb-8"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs sm:text-sm font-semibold text-[#06182F]/85 mb-7 sm:mb-8"
             >
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#F57E20] shrink-0" />
@@ -211,11 +214,11 @@ export default function AboutHero() {
             {/* Two CTA Buttons */}
             <div
               ref={buttonsRef}
-              className="flex flex-wrap items-center gap-3.5"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-3.5 w-full"
             >
               <a
                 href="#who-we-are"
-                className="font-button inline-flex items-center justify-center gap-2.5 px-7 py-3.5 sm:px-8 sm:py-4 bg-[#F57E20] text-white font-bold text-sm sm:text-base rounded-full shadow-lg shadow-[#F57E20]/30 hover:bg-[#06182F] hover:shadow-[#06182F]/25 transition-all duration-300 group cursor-pointer hover:scale-[1.02]"
+                className="font-button inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-[#F57E20] text-white font-bold text-sm sm:text-base rounded-full shadow-lg shadow-[#F57E20]/30 hover:bg-[#06182F] hover:shadow-[#06182F]/25 transition-all duration-300 group cursor-pointer hover:scale-[1.02]"
               >
                 <span>Our Story</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -223,7 +226,7 @@ export default function AboutHero() {
 
               <Link
                 href="/contact"
-                className="font-button inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:px-7 sm:py-4 bg-white text-[#06182F] border border-[#06182F]/20 font-semibold text-sm sm:text-base rounded-full shadow-sm hover:border-[#F57E20] hover:text-[#F57E20] hover:bg-[#F57E20]/5 transition-all duration-300 cursor-pointer group"
+                className="font-button inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-7 sm:py-4 bg-white text-[#06182F] border border-[#06182F]/20 font-semibold text-sm sm:text-base rounded-full shadow-sm hover:border-[#F57E20] hover:text-[#F57E20] hover:bg-[#F57E20]/5 transition-all duration-300 cursor-pointer group"
               >
                 <Sparkles className="w-4 h-4 text-[#F57E20]" />
                 <span>Contact Us</span>

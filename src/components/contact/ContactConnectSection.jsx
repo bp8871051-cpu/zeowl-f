@@ -42,7 +42,7 @@ const connectCards = [
     image: '/connect-card-2.png',
     actionType: 'link',
     target:
-      'mailto:info@zeowlinfotech.com?subject=Partnership%20Inquiry%20-%20Zeowl%20Infotech',
+      'mailto:info.zeowlinfotech@gmail.com?subject=Partnership%20Inquiry%20-%20Zeowl%20Infotech',
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -67,7 +67,7 @@ const connectCards = [
     image: '/connect-card-3.png',
     actionType: 'link',
     target:
-      'mailto:info@zeowlinfotech.com?subject=General%20Inquiry%20-%20Zeowl%20Infotech',
+      'mailto:info.zeowlinfotech@gmail.com?subject=General%20Inquiry%20-%20Zeowl%20Infotech',
     icon: (
       <svg
         viewBox="0 0 24 24"

@@ -149,7 +149,7 @@ export default function OurWorkSection() {
               <span className="text-[#f57e20] font-black tracking-widest text-sm uppercase">OUR WORK</span>
               <div className="w-12 h-[2px] bg-[#f57e20]"></div>
             </div>
-            <h2 className="text-[#071a35] text-5xl md:text-6xl font-black leading-[1.1] tracking-tight mb-4">
+            <h2 className="text-[#071a35] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight mb-4">
               Ideas Turned <br />
               Into <span className="text-[#f57e20]">Real Projects.</span>
             </h2>
