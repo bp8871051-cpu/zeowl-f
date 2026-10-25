@@ -15,6 +15,7 @@ const fallbackTestimonials = [
     rating: 5,
     avatar: '/testimonials/alexander.jpg',
     project_name: 'FinVibe SaaS Platform',
+    pdf: '/testimonials/zeowl-testimonials.pdf',
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ const fallbackTestimonials = [
     rating: 5,
     avatar: '/testimonials/elena.jpg',
     project_name: 'Nova Health Telemedicine App',
+    pdf: '/testimonials/zeowl-testimonials.pdf',
   },
   {
     id: 3,
@@ -45,11 +47,60 @@ const fallbackTestimonials = [
     rating: 5,
     avatar: '/testimonials/marcus.jpg',
     project_name: 'AutomateIQ Multi-Agent Engine',
+    pdf: '/testimonials/zeowl-testimonials.pdf',
+  },
+  {
+    id: 4,
+    name: 'Jay Patel',
+    client_name: 'Jay Patel',
+    role: 'Founder',
+    client_role: 'Founder',
+    company: 'Patel Construction Group',
+    content:
+      'Zeowl Infotech delivered our enterprise web platform with exceptional quality and strictly on time. Their engineering team is proactive, highly responsive, and brought immediate value to our business operations.',
+    review:
+      'Zeowl Infotech delivered our enterprise web platform with exceptional quality and strictly on time. Their engineering team is proactive, highly responsive, and brought immediate value to our business operations.',
+    rating: 5,
+    avatar: '/testimonials/avatar-jay.jpg',
+    project_name: 'Enterprise Construction Portal',
+    pdf: '/testimonials/zeowl-testimonials.pdf',
+  },
+  {
+    id: 5,
+    name: 'Priya Shah',
+    client_name: 'Priya Shah',
+    role: 'Managing Director',
+    client_role: 'Managing Director',
+    company: 'Meridian Estates',
+    content:
+      'Working with Zeowl was an outstanding experience. They engineered an intuitive, ultra-fast client portal that streamlined our property transactions and elevated our digital brand prestige.',
+    review:
+      'Working with Zeowl was an outstanding experience. They engineered an intuitive, ultra-fast client portal that streamlined our property transactions and elevated our digital brand prestige.',
+    rating: 5,
+    avatar: '/testimonials/avatar-priya.jpg',
+    project_name: 'Meridian Real Estate CRM',
+    pdf: '/testimonials/zeowl-testimonials.pdf',
+  },
+  {
+    id: 6,
+    name: 'Karan Desai',
+    client_name: 'Karan Desai',
+    role: 'Chief Executive Officer',
+    client_role: 'Chief Executive Officer',
+    company: 'Digital Creators Hub',
+    content:
+      'Exceptional communication, creative architectural direction, and immaculate attention to detail. Zeowl Infotech is an indispensable technology partner for any high-growth scale-up.',
+    review:
+      'Exceptional communication, creative architectural direction, and immaculate attention to detail. Zeowl Infotech is an indispensable technology partner for any high-growth scale-up.',
+    rating: 5,
+    avatar: '/testimonials/avatar-karan.jpg',
+    project_name: 'Creator SaaS Platform',
+    pdf: '/testimonials/zeowl-testimonials.pdf',
   },
 ];
 
 export async function GET() {
-  const backendUrl = process.env.BACKEND_API_URL || 'http://127.0.0.1:8000/api';
+  const backendUrl = process.env.BACKEND_API_URL || 'http://127.0.0.1:8080/api';
 
   try {
     const controller = new AbortController();

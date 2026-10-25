@@ -104,7 +104,7 @@ export default function ServicesShowcaseSection() {
                 <Code2 className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">Web &amp; Software</div>
+                <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">Web & Software</div>
                 <div className="text-[11px] sm:text-xs text-[#06182F]/80 font-mono-tech font-bold">Full-Stack Tech</div>
               </div>
             </div>
@@ -115,7 +115,7 @@ export default function ServicesShowcaseSection() {
               </div>
               <div>
                 <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">Digital Growth</div>
-                <div className="text-[11px] sm:text-xs text-[#06182F]/80 font-mono-tech font-bold">Data &amp; Scale</div>
+                <div className="text-[11px] sm:text-xs text-[#06182F]/80 font-mono-tech font-bold">Data & Scale</div>
               </div>
             </div>
 
@@ -124,7 +124,7 @@ export default function ServicesShowcaseSection() {
                 <Cpu className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">AI &amp; Automation</div>
+                <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">AI & Automation</div>
                 <div className="text-[11px] sm:text-xs text-[#06182F]/80 font-mono-tech font-bold">Smart Pipelines</div>
               </div>
             </div>

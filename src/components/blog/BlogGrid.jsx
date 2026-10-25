@@ -42,16 +42,16 @@ export default function BlogGrid({
         {/* Header & Filter Pills Row                                                 */}
         {/* ========================================================================= */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 pb-8 border-b border-[#06182f]/[0.08]">
-          <div>
+          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f57e20]/10 border border-[#f57e20]/25 text-[#f57e20] text-xs font-bold font-mono uppercase tracking-wider mb-3">
               <Layers className="w-3.5 h-3.5" />
               <span>EXPLORE ARTICLES</span>
             </div>
             <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#06182f] tracking-tight">
-              Latest Insights &amp;{' '}
+              Latest Insights &{' '}
               <span className="text-[#f57e20]">Engineering Articles</span>
             </h2>
-            <p className="text-sm font-medium text-[#64748B] max-w-lg mt-3">
+            <p className="text-sm font-medium text-[#64748B] max-w-lg mt-3 mx-auto sm:mx-0">
               Showing{' '}
               <span className="font-bold text-[#06182f] font-mono">
                 {filteredPosts.length}
@@ -62,7 +62,7 @@ export default function BlogGrid({
           </div>
 
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap gap-2.5 items-center">
+          <div className="flex flex-wrap gap-2.5 items-center justify-center sm:justify-start">
             {blogCategories.map((cat) => {
               const isActive = activeCategory === cat;
               return (

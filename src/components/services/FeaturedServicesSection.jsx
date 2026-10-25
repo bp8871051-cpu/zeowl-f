@@ -265,7 +265,7 @@ export default function FeaturedServicesSection() {
                     <div className="p-3 rounded-xl bg-[#F47B20]/15 border border-[#F47B20]/30 flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <Cpu className="w-4 h-4 text-[#F47B20] animate-spin" />
-                        <span className="text-white font-semibold">LLM Triage &amp; Vector Lookup</span>
+                        <span className="text-white font-semibold">LLM Triage & Vector Lookup</span>
                       </div>
                       <span className="text-[#F47B20] text-[10px]">GPT-4o</span>
                     </div>
@@ -275,7 +275,7 @@ export default function FeaturedServicesSection() {
                     <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                        <span className="text-white/90">Automated Resolution &amp; Sync</span>
+                        <span className="text-white/90">Automated Resolution & Sync</span>
                       </div>
                       <span className="text-emerald-400 text-[10px]">65% Cost Saved</span>
                     </div>

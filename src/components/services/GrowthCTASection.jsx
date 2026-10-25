@@ -279,7 +279,7 @@ export default function GrowthCTASection() {
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] items-center gap-10 lg:gap-12 xl:gap-16">
           
           {/* LEFT / CENTER CONTENT AREA */}
-          <div className="flex flex-col text-left">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0">
             {/* 1. Small Eyebrow: LET'S BUILD SOMETHING GREAT */}
             <div
               ref={eyebrowRef}
@@ -297,7 +297,7 @@ export default function GrowthCTASection() {
             {/* 2. Main Heading: Let's Grow Your Business Together */}
             <h2
               ref={headingRef}
-              className="font-bold tracking-tight leading-[1.08] mb-5 sm:mb-6 text-white text-3xl sm:text-4xl lg:text-[44px] xl:text-[50px]"
+              className="font-bold tracking-tight leading-[1.08] mb-5 sm:mb-6 text-white text-3xl sm:text-4xl lg:text-[44px] xl:text-[50px] text-center lg:text-left"
               style={{ fontFamily: 'var(--font-space-grotesk), sans-serif' }}
             >
               <div className="overflow-hidden">
@@ -315,7 +315,7 @@ export default function GrowthCTASection() {
             {/* 3. Description: Inter, 16-18px, rgba(255,255,255,0.78), max 500px */}
             <p
               ref={descRef}
-              className="text-[16px] sm:text-[17px] leading-[1.6] max-w-[500px] mb-8"
+              className="text-[16px] sm:text-[17px] leading-[1.6] max-w-[500px] mb-8 text-center lg:text-left mx-auto lg:mx-0"
               style={{
                 fontFamily: 'var(--font-inter), sans-serif',
                 color: 'rgba(255, 255, 255, 0.85)',

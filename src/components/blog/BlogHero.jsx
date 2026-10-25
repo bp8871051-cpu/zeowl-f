@@ -86,7 +86,7 @@ export default function BlogHero({
             <motion.div variants={fadeInUp} className="mb-4">
               <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-[#f57e20]/10 border border-[#f57e20]/25 text-[#f57e20] text-[11px] sm:text-xs font-bold font-mono tracking-wider uppercase backdrop-blur-md">
                 <Sparkles className="w-3.5 h-3.5 text-[#f57e20]" />
-                <span>INSIGHTS &amp; PERSPECTIVES • ZEOWL BLOG</span>
+                <span>INSIGHTS & PERSPECTIVES • ZEOWL BLOG</span>
               </div>
             </motion.div>
 
@@ -95,7 +95,7 @@ export default function BlogHero({
               variants={fadeInUp}
               className="font-heading font-black tracking-[-0.03em] leading-[1.08] sm:leading-[1.05] text-[30px] sm:text-[40px] md:text-[50px] lg:text-[58px] xl:text-[64px] text-[#06182f] text-center lg:text-left"
             >
-              Ideas, Insights &amp; <br className="hidden sm:inline" />
+              Ideas, Insights & <br className="hidden sm:inline" />
               <span className="text-[#f57e20]">Engineering Trends.</span>
             </motion.h1>
 

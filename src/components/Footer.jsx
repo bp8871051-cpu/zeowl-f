@@ -131,13 +131,13 @@ export default function Footer() {
           {/* COLUMN 1: BRAND IDENTITY & SOCIALS (4 Cols)          */}
           {/* ---------------------------------------------------- */}
           <motion.div variants={fadeInUp} className="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-4">
-            {/* Logo - White version for high-contrast crisp visibility */}
+            {/* Logo - User Official Zeowl Logo */}
             <Link href="/" className="inline-block mb-5 group focus:outline-none">
               <div className="relative">
                 <img
-                  src="/logo/ZEOWL-white.png"
+                  src="/logo/zeowl-footer-logo.png"
                   alt="Zeowl Infotech"
-                  className="h-11 sm:h-13 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+                  className="h-20 sm:h-24 md:h-28 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] filter drop-shadow-[0_4px_16px_rgba(245,126,32,0.2)]"
                 />
               </div>
             </Link>

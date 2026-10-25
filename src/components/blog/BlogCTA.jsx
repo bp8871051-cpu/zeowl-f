@@ -49,15 +49,15 @@ export default function BlogCTA() {
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center"
         >
           {/* Left: Heading & Eyebrow */}
-          <div className="lg:col-span-4 flex flex-col items-start text-left">
-            <div className="flex items-center gap-2 mb-2 select-none">
+          <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0">
+            <div className="flex items-center justify-center lg:justify-start gap-2 mb-2 select-none">
               <span className="text-[#f57e20] text-xs font-mono font-bold tracking-wider uppercase">
                 WHY ZEOWL INSIGHTS
               </span>
               <span className="w-8 h-[2px] bg-[#f57e20] rounded-full inline-block" />
             </div>
 
-            <h3 className="font-heading font-black text-3xl sm:text-4xl text-[#06182f] tracking-tight leading-[1.12]">
+            <h3 className="font-heading font-black text-3xl sm:text-4xl text-[#06182f] tracking-tight leading-[1.12] text-center lg:text-left">
               Learn. Build. <br />
               <span className="text-[#f57e20]">Grow Smarter.</span>
             </h3>

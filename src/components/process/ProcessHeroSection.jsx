@@ -66,7 +66,7 @@ export default function ProcessHeroSection() {
 
       {/* Content Container (Positioned on the Left to complement the mountain & lightbulb visual on the right) */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="max-w-xl lg:max-w-2xl" ref={contentRef}>
+        <div className="max-w-xl lg:max-w-2xl flex flex-col items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0" ref={contentRef}>
 
           {/* Eyebrow Pill */}
           <div className="process-reveal-item inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#06182F]/15 text-xs font-mono-tech uppercase tracking-widest text-[#f57e20] font-bold mb-6 shadow-sm">
@@ -75,7 +75,7 @@ export default function ProcessHeroSection() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="process-reveal-item text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-heading font-black tracking-tight text-[#06182F] leading-[1.12] mb-6 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]">
+          <h1 className="process-reveal-item text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-heading font-black tracking-tight text-[#06182F] leading-[1.12] mb-6 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)] text-center lg:text-left">
             From The Spark of An Idea <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-[#f57e20] via-[#E86714] to-[#C8550B] bg-clip-text text-transparent">
               To Digital Summit
@@ -83,15 +83,15 @@ export default function ProcessHeroSection() {
           </h1>
 
           {/* Divider */}
-          <div className="process-reveal-item h-[3.5px] w-20 bg-[#f57e20] rounded-full shadow-[0_2px_8px_rgba(244,123,32,0.4)] mb-6" />
+          <div className="process-reveal-item h-[3.5px] w-20 bg-[#f57e20] rounded-full shadow-[0_2px_8px_rgba(244,123,32,0.4)] mb-6 mx-auto lg:mx-0" />
 
           {/* Subheading / Description */}
-          <p className="process-reveal-item text-base sm:text-lg md:text-xl text-[#06182F] font-semibold leading-relaxed mb-8 drop-shadow-[0_1px_1px_rgba(255,255,255,0.85)]">
+          <p className="process-reveal-item text-base sm:text-lg md:text-xl text-[#06182F] font-semibold leading-relaxed mb-8 drop-shadow-[0_1px_1px_rgba(255,255,255,0.85)] text-center lg:text-left mx-auto lg:mx-0">
             We follow a transparent, collaborative, and agile delivery process engineered to bring clarity to complex challenges and turn your vision into high-impact digital solutions.
           </p>
 
           {/* Feature Badges */}
-          <div className="process-reveal-item grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
+          <div className="process-reveal-item grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8 w-full text-left">
             <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#06182F]/15 shadow-sm hover:border-[#f57e20]/60 transition-colors">
               <div className="w-9 h-9 rounded-lg bg-[#f57e20]/15 flex items-center justify-center text-[#f57e20] shrink-0">
                 <Lightbulb className="w-5 h-5" />
@@ -108,7 +108,7 @@ export default function ProcessHeroSection() {
               </div>
               <div>
                 <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">2. Strategy</div>
-                <div className="text-xs text-[#06182F]/80 font-mono-tech font-bold">Roadmap &amp; Tech</div>
+                <div className="text-xs text-[#06182F]/80 font-mono-tech font-bold">Roadmap & Tech</div>
               </div>
             </div>
 
@@ -118,7 +118,7 @@ export default function ProcessHeroSection() {
               </div>
               <div>
                 <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">3. Execution</div>
-                <div className="text-xs text-[#06182F]/80 font-mono-tech font-bold">Sprint Builds &amp; QA</div>
+                <div className="text-xs text-[#06182F]/80 font-mono-tech font-bold">Sprint Builds & QA</div>
               </div>
             </div>
 
@@ -127,14 +127,14 @@ export default function ProcessHeroSection() {
                 <Rocket className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">4. Scale &amp; Grow</div>
+                <div className="text-xs sm:text-sm font-heading font-extrabold text-[#06182F]">4. Scale & Grow</div>
                 <div className="text-xs text-[#06182F]/80 font-mono-tech font-bold">Continuous Success</div>
               </div>
             </div>
           </div>
 
           {/* CTA & Explore Button */}
-          <div className="process-reveal-item flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4">
+          <div className="process-reveal-item flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5 sm:gap-4 w-full">
             <a
               href="#our-journey"
               className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#f57e20] text-white font-button font-bold text-sm hover:bg-[#06182F] shadow-lg shadow-[#f57e20]/30 transition-all duration-300 group cursor-pointer text-center"

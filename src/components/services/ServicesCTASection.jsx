@@ -151,7 +151,7 @@ export default function ServicesCTASection() {
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>100% NDA &amp; IP Protection</span>
+              <span>100% NDA & IP Protection</span>
             </div>
           </div>
         </div>

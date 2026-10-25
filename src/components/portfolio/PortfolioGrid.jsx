@@ -115,25 +115,25 @@ export default function PortfolioGrid({
         {/* Section Header + FILTER BY DOMAIN PILLS                                   */}
         {/* ========================================================================= */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 pb-8 border-b border-[#06182f]/[0.08]">
-          <div>
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f57e20]/10 border border-[#f57e20]/25 text-[#f57e20] text-xs font-bold font-mono uppercase tracking-wider mb-3">
               <Layers className="w-3.5 h-3.5" />
               <span>CURATED CASE STUDIES</span>
             </div>
             <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#06182f] tracking-tight">
-              Selected Work &amp; <span className="text-[#f57e20]">Featured Products</span>
+              Selected Work & <span className="text-[#f57e20]">Featured Products</span>
             </h2>
-            <div className="text-sm font-medium text-[#64748B] max-w-lg mt-3">
+            <div className="text-sm font-medium text-[#64748B] max-w-lg mt-3 mx-auto lg:mx-0">
               Showing <span className="font-bold text-[#06182f] font-mono">{filteredProjects.length}</span> proven engineering solutions engineered with modern technology standards.
             </div>
           </div>
 
           {/* FILTER BY DOMAIN: Interactive Category Pills */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col items-center lg:items-start gap-3 w-full lg:w-auto">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#64748B]">
               FILTER BY DOMAIN:
             </div>
-            <div className="flex flex-wrap gap-2.5 items-center">
+            <div className="flex flex-wrap gap-2.5 items-center justify-center lg:justify-start">
               {categories.map((cat) => {
                 const isActive = activeCategory === cat;
                 return (

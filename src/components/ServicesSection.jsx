@@ -18,14 +18,14 @@ const services = [
   },
   {
     id: '03',
-    title: 'UI/UX &amp;\nProduct Design',
+    title: 'UI/UX &\nProduct Design',
     desc: 'Human-centered designs that create real impact.',
     tags: ['Wireframes', 'Prototyping', 'User Testing'],
     image: '/images for services/03_ui-ux-design-removebg-preview.png'
   },
   {
     id: '04',
-    title: 'AI &amp;\nAutomation',
+    title: 'AI &\nAutomation',
     desc: 'Intelligent solutions to streamline and scale your business.',
     tags: ['Machine Learning', 'Bots', 'Data'],
     image: '/images for services/04_ai-automation-removebg-preview.png'
@@ -64,32 +64,6 @@ export default function ServicesSection() {
     }
   };
 
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const handleWheel = (e) => {
-      if (e.deltaY === 0) return;
-
-      const isScrollable = carousel.scrollWidth > carousel.clientWidth;
-      if (!isScrollable) return;
-
-      const isAtLeft = carousel.scrollLeft <= 0;
-      const isAtRight = Math.ceil(carousel.scrollLeft + carousel.clientWidth) >= carousel.scrollWidth;
-
-      if (e.deltaY > 0 && isAtRight) return;
-      if (e.deltaY < 0 && isAtLeft) return;
-
-      e.preventDefault();
-      carousel.scrollLeft += e.deltaY;
-    };
-
-    carousel.addEventListener('wheel', handleWheel, { passive: false });
-    return () => {
-      carousel.removeEventListener('wheel', handleWheel);
-    };
-  }, []);
-
   const scrollToIndex = (index) => {
     if (carouselRef.current) {
       const child = carouselRef.current.children[index];
@@ -113,16 +87,16 @@ export default function ServicesSection() {
 
         {/* HEADER */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-center">
-          <div className="flex flex-col">
-            <div className="flex items-center gap-3 mb-6">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0">
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
               <div className="w-8 h-[2px] bg-[#FF7A18]"></div>
               <span className="text-[#FF7A18] uppercase tracking-wider text-sm font-bold">OUR SERVICES</span>
             </div>
-            <h2 className="text-[#071A35] font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight mb-5 sm:mb-6">
+            <h2 className="text-[#071A35] font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight mb-5 sm:mb-6 text-center lg:text-left">
               WE TURN COMPLEX IDEAS<br />
               INTO <span className="text-[#FF7A18]">DIGITAL EXPERIENCES.</span>
             </h2>
-            <p className="text-[#566579] text-lg max-w-xl leading-relaxed">
+            <p className="text-[#566579] text-base sm:text-lg max-w-xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0">
               From strategy and design to development and growth, we offer end-to-end digital solutions that help businesses innovate, scale and stay ahead.
             </p>
           </div>

@@ -91,9 +91,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} ${spaceGrotesk.variable} ${inter.variable} ${manrope.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} ${spaceGrotesk.variable} ${inter.variable} ${manrope.variable} ${jetbrainsMono.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-brand-navy relative">
+      <body className="min-h-screen flex flex-col bg-white text-brand-navy relative">
         <SmoothScrollProvider>
           <ZeowlLoader />
           <Navbar />

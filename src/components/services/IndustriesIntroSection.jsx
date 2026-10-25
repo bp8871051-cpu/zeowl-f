@@ -157,7 +157,7 @@ export default function IndustriesIntroSection() {
                 className="text-[12px] sm:text-[13px] font-bold uppercase tracking-[0.14em] text-[#f57e20]"
                 style={{ fontFamily: 'var(--font-manrope), sans-serif' }}
               >
-                INDUSTRIES &amp; BUSINESSES WE WORK WITH
+                INDUSTRIES & BUSINESSES WE WORK WITH
               </span>
             </div>
 

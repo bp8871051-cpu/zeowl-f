@@ -72,7 +72,7 @@ export default function FeaturedArticle() {
                   FEATURED
                 </motion.span>
                 <span className="text-white/90 text-xs sm:text-sm font-mono font-bold uppercase tracking-wider">
-                  AI &amp; AUTOMATION
+                  AI & AUTOMATION
                 </span>
               </div>
 

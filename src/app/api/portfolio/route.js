@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET(request) {
-  const backendUrl = process.env.BACKEND_API_URL || 'http://127.0.0.1:8000/api';
+  const backendUrl = process.env.BACKEND_API_URL || 'http://127.0.0.1:8080/api';
   const { searchParams } = new URL(request.url);
   const category = searchParams.get('category');
 

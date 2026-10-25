@@ -196,7 +196,7 @@ export default function OurJourneySection() {
             Top padding guarantees navbar NEVER covers or touches it!
             ========================================================== */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-14">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl flex flex-col items-center md:items-start text-center md:text-left mx-auto md:mx-0">
             {/* Eyebrow */}
             <div className="journey-header-anim inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f57e20]/10 border border-[#f57e20]/30 text-xs font-bold uppercase tracking-[0.2em] text-[#f57e20] font-['Space_Grotesk',sans-serif] mb-4">
               <Sparkles className="w-3.5 h-3.5 text-[#f57e20]" />
@@ -204,7 +204,7 @@ export default function OurJourneySection() {
             </div>
 
             {/* Main Heading */}
-            <h2 className="journey-header-anim text-3xl sm:text-4xl lg:text-5xl font-['Space_Grotesk',sans-serif] font-bold text-white tracking-tight leading-[1.15] mb-4">
+            <h2 className="journey-header-anim text-3xl sm:text-4xl lg:text-5xl font-['Space_Grotesk',sans-serif] font-bold text-white tracking-tight leading-[1.15] mb-4 text-center md:text-left">
               A Structured Process <br className="hidden sm:inline" />
               for Your{' '}
               <span className="bg-gradient-to-r from-[#f57e20] via-[#f57e20] to-[#E06714] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(249,185,32,0.4)]">
@@ -213,13 +213,13 @@ export default function OurJourneySection() {
             </h2>
 
             {/* Subtitle */}
-            <p className="journey-header-anim text-sm sm:text-base text-white/80 font-['Inter',sans-serif] leading-relaxed">
+            <p className="journey-header-anim text-sm sm:text-base text-white/80 font-['Inter',sans-serif] leading-relaxed text-center md:text-left mx-auto md:mx-0">
               We follow a result-driven approach that ensures clarity, quality and long-term growth for your business.
             </p>
           </div>
 
           {/* Quick milestone selector tabs */}
-          <div className="journey-header-anim flex items-center gap-2 p-1.5 rounded-2xl bg-white/[0.05] border border-white/10 backdrop-blur-md">
+          <div className="journey-header-anim flex items-center justify-center gap-2 p-1.5 rounded-2xl bg-white/[0.05] border border-white/10 backdrop-blur-md mx-auto md:mx-0">
             {journeyStages.map((stage, idx) => {
               const isActive = activeStep === idx;
               return (

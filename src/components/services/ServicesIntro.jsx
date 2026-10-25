@@ -63,7 +63,7 @@ export default function ServicesIntro() {
         {/* Heading */}
         <h2 className="intro-reveal-item text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-[#071A2F] leading-[1.15] mb-6">
           Everything You Need <br className="hidden sm:block" />
-          <span className="text-[#071A2F]">To Build, Grow &amp; Scale</span>
+          <span className="text-[#071A2F]">To Build, Grow & Scale</span>
         </h2>
 
         {/* Animated Orange Divider */}

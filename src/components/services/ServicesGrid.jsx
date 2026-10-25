@@ -294,9 +294,9 @@ export default function ServicesGrid() {
         {/* SECTION HEADER: Editorial Layout */}
         <div
           ref={headerRef}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 lg:mb-20 pb-8 border-b border-[#06182f]/10"
+          className="flex flex-col md:flex-row items-center md:items-end justify-between gap-8 mb-16 lg:mb-20 pb-8 border-b border-[#06182f]/10"
         >
-          <div>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left mx-auto md:mx-0">
             {/* SECTION EYEBROW */}
             <div className="inline-flex items-center gap-2.5 text-xs font-mono-tech uppercase tracking-[0.22em] text-[#06182f]/80 font-bold mb-4 px-3.5 py-1.5 rounded-full bg-[#06182f]/[0.04] border border-[#06182f]/8 shadow-xs">
               <span className="w-2 h-2 rounded-full bg-[#f57e20] animate-pulse" />
@@ -304,14 +304,14 @@ export default function ServicesGrid() {
             </div>
 
             {/* MAIN HEADING */}
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-black tracking-tight text-[#06182f] uppercase leading-[0.95]">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-black tracking-tight text-[#06182f] uppercase leading-[0.95] text-center md:text-left">
               PORTFOLIO
             </h2>
           </div>
 
           {/* SUBTEXT */}
-          <div className="max-w-md lg:max-w-lg">
-            <p className="text-base sm:text-lg text-[#64748B] font-body leading-relaxed">
+          <div className="max-w-md lg:max-w-lg text-center md:text-left mx-auto md:mx-0">
+            <p className="text-base sm:text-lg text-[#64748B] font-body leading-relaxed text-center md:text-left">
               A curated showcase of our digital products, creative solutions, and technology-driven work.
             </p>
           </div>

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function POST(request) {
-  const backendUrl = process.env.BACKEND_API_URL || 'http://127.0.0.1:8000/api';
+  const backendUrl = process.env.BACKEND_API_URL || 'http://127.0.0.1:8080/api';
 
   try {
     const body = await request.json();

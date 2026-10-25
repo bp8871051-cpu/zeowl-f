@@ -67,7 +67,7 @@ export default function ContactLocations() {
               <span>GLOBAL FOOTPRINT</span>
             </div>
             <h2 className="font-heading text-3xl sm:text-4xl font-black text-[#06182F] tracking-tight">
-              Where We Are &amp; How We Work
+              Where We Are & How We Work
             </h2>
             <p className="font-body text-[#475569] text-base mt-2 max-w-xl">
               Headquartered in Gujarat, India, delivering enterprise-grade engineering solutions across 4 continents.

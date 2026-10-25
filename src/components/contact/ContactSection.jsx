@@ -149,7 +149,7 @@ export default function ContactSection({ isTopSection = false }) {
       console.error('Contact submission error:', err);
       setErrorMessage(
         err.message ||
-          'Unable to submit your inquiry right now. Please try again or email us directly at info.zeowlinfotech@gmail.com'
+        'Unable to submit your inquiry right now. Please try again or email us directly at info.zeowlinfotech@gmail.com'
       );
     } finally {
       setIsSubmitting(false);
@@ -172,11 +172,10 @@ export default function ContactSection({ isTopSection = false }) {
     <section
       id="contact-section"
       ref={containerRef}
-      className={`relative w-full ${
-        isTopSection
+      className={`relative w-full ${isTopSection
           ? 'pt-10 sm:pt-14 lg:pt-16 pb-16 sm:pb-20 lg:pb-28'
           : 'py-16 sm:py-20 lg:py-28'
-      } overflow-hidden font-sans`}
+        } overflow-hidden font-sans`}
     >
       {/* ======================================================== */}
       {/* 1. EXISTING BACKGROUND LAYER (PRESERVED UNCHANGED)       */}
@@ -200,7 +199,7 @@ export default function ContactSection({ isTopSection = false }) {
       <div className="max-w-[1400px] w-[92%] mx-auto relative z-10">
         {/* Breadcrumb if top section */}
         {isTopSection && (
-          <div className="flex items-center gap-2 text-xs font-semibold text-[#64748B] mb-8 tracking-wider uppercase">
+          <div className="flex items-center justify-center lg:justify-start gap-2 text-xs font-semibold text-[#64748B] mb-8 tracking-wider uppercase">
             <Link href="/" className="hover:text-[#f57e20] transition-colors">
               Home
             </Link>
@@ -214,7 +213,7 @@ export default function ContactSection({ isTopSection = false }) {
           {/* ==================================================== */}
           {/* LEFT CONTENT: HEADINGS, INTRO & 3 VALUE POINTS       */}
           {/* ==================================================== */}
-          <div ref={leftContentRef} className="lg:col-span-6 xl:col-span-6">
+          <div ref={leftContentRef} className="lg:col-span-6 xl:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0">
             {/* Small eyebrow */}
             <div className="hero-eyebrow inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#f57e20]/30 shadow-sm text-xs font-bold text-[#f57e20] uppercase tracking-[0.2em] mb-5 backdrop-blur-md font-button">
               <Sparkles className="w-3.5 h-3.5 text-[#f57e20]" />
@@ -222,19 +221,19 @@ export default function ContactSection({ isTopSection = false }) {
             </div>
 
             {/* Main heading */}
-            <h1 className="hero-heading font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black text-[#06182f] tracking-tight leading-[1.12] mb-5">
+            <h1 className="hero-heading font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black text-[#06182f] tracking-tight leading-[1.12] mb-5 text-center lg:text-left">
               Let’s Build Something <br className="hidden sm:inline" />
               Great <span className="text-[#f57e20]">Together.</span>
             </h1>
 
             {/* Description */}
-            <p className="hero-desc font-body text-[#475569] text-base sm:text-lg leading-relaxed max-w-xl mb-10">
+            <p className="hero-desc font-body text-[#475569] text-base sm:text-lg leading-relaxed max-w-xl mb-10 text-center lg:text-left mx-auto lg:mx-0">
               Have a project in mind, a business challenge to solve, or simply an idea you want to explore?
               Tell us what you’re looking for. Our team will help you find the right technology, strategy, and solution to turn your idea into real impact.
             </p>
 
             {/* 3 Compact Trust / Value Points */}
-            <div className="space-y-3.5 max-w-xl">
+            <div className="space-y-3.5 max-w-xl w-full text-left">
               {trustPoints.map((point) => (
                 <div
                   key={point.number}

@@ -130,11 +130,10 @@ export default function TestimonialsGrid() {
             return (
               <div
                 key={`${card.id}-${index}`}
-                className={`relative flex flex-col justify-between bg-white rounded-2xl p-7 sm:p-8 transition-all duration-300 group ${
-                  isCenter
+                className={`relative flex flex-col justify-between bg-white rounded-2xl p-7 sm:p-8 transition-all duration-300 group ${isCenter
                     ? 'shadow-[0_20px_50px_rgba(255,121,0,0.12)] border-2 border-[#FF7900]/30 -translate-y-1'
                     : 'shadow-[0_10px_35px_rgba(10,28,48,0.06)] border border-slate-100 hover:shadow-[0_15px_40px_rgba(10,28,48,0.1)] hover:-translate-y-1'
-                }`}
+                  }`}
               >
                 {/* Watermark Quote Mark in Bottom Right */}
                 <div

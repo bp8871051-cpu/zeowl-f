@@ -3,6 +3,7 @@
 import React, { useEffect, createContext, useContext } from 'react';
 import { usePathname } from 'next/navigation';
 import Lenis from 'lenis';
+import 'lenis/dist/lenis.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -27,16 +28,19 @@ export default function SmoothScrollProvider({ children }) {
       return;
     }
 
-    // Initialize global Lenis instance
+    // Initialize global Lenis instance with optimal settings
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.0,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      touchMultiplier: 1.5,
+      syncTouch: false,
+      touchMultiplier: 1,
       wheelMultiplier: 1,
       infinite: false,
+      autoRaf: false,
+      anchors: true,
     });
 
     window.lenis = lenis;
@@ -50,16 +54,46 @@ export default function SmoothScrollProvider({ children }) {
     };
 
     gsap.ticker.add(updateTicker);
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.lagSmoothing(500, 33);
 
-    // Refresh ScrollTrigger when images load and DOM updates
-    const handleLoad = () => {
+    // Refresh ScrollTrigger and Lenis scroll limits when images and DOM update
+    const handleUpdate = () => {
+      lenis.resize();
       ScrollTrigger.refresh();
     };
-    window.addEventListener('load', handleLoad);
+
+    if (document.readyState === 'complete') {
+      handleUpdate();
+    } else {
+      window.addEventListener('load', handleUpdate);
+    }
+
+    window.addEventListener('resize', handleUpdate);
+
+    // Watch document font loads for accurate height calculation
+    if (typeof document !== 'undefined' && document.fonts) {
+      document.fonts.ready.then(handleUpdate);
+    }
+
+    // Continuously observe document body for dynamic section height changes
+    let resizeObserver;
+    if (typeof ResizeObserver !== 'undefined' && document.body) {
+      resizeObserver = new ResizeObserver(() => {
+        handleUpdate();
+      });
+      resizeObserver.observe(document.body);
+    }
+
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
 
     return () => {
-      window.removeEventListener('load', handleLoad);
+      window.removeEventListener('load', handleUpdate);
+      window.removeEventListener('resize', handleUpdate);
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
       gsap.ticker.remove(updateTicker);
       lenis.destroy();
       delete window.lenis;
@@ -69,16 +103,29 @@ export default function SmoothScrollProvider({ children }) {
   // Handle route change: reset scroll to top immediately and refresh ScrollTrigger
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
       if (window.lenis) {
         window.lenis.scrollTo(0, { immediate: true });
       }
-      const t1 = setTimeout(() => ScrollTrigger.refresh(), 100);
-      const t2 = setTimeout(() => ScrollTrigger.refresh(), 400);
-      const t3 = setTimeout(() => ScrollTrigger.refresh(), 800);
+      // Re-assert on next frame after DOM commit
+      const rafId = requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+        if (window.lenis) {
+          window.lenis.scrollTo(0, { immediate: true });
+        }
+      });
+      const t1 = setTimeout(() => {
+        if (window.lenis) window.lenis.resize();
+        ScrollTrigger.refresh();
+      }, 100);
+      const t2 = setTimeout(() => {
+        if (window.lenis) window.lenis.resize();
+        ScrollTrigger.refresh();
+      }, 400);
       return () => {
+        cancelAnimationFrame(rafId);
         clearTimeout(t1);
         clearTimeout(t2);
-        clearTimeout(t3);
       };
     }
   }, [pathname]);

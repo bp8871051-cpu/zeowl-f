@@ -142,24 +142,24 @@ export default function OurWorkSection() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
 
         {/* Top Header Row */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
-          <div className="max-w-xl">
-            <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end mb-16 gap-8">
+          <div className="max-w-xl flex flex-col items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0">
+            <div className="flex items-center justify-center lg:justify-start gap-4 mb-4">
               <div className="w-12 h-[2px] bg-[#f57e20]"></div>
               <span className="text-[#f57e20] font-black tracking-widest text-sm uppercase">OUR WORK</span>
               <div className="w-12 h-[2px] bg-[#f57e20]"></div>
             </div>
-            <h2 className="text-[#071a35] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight mb-4">
+            <h2 className="text-[#071a35] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight mb-4 text-center lg:text-left">
               Ideas Turned <br />
               Into <span className="text-[#f57e20]">Real Projects.</span>
             </h2>
-            <p className="text-gray-500 font-medium text-lg max-w-md">
-              A glimpse of the solutions we've built for startups, businesses and growing brands.
+            <p className="text-gray-500 font-medium text-lg max-w-md text-center lg:text-left mx-auto lg:mx-0">
+              A glimpse of the solutions we&apos;ve built for startups, businesses and growing brands.
             </p>
           </div>
 
           {/* Categories */}
-          <div className="flex flex-wrap gap-3 items-center">
+          <div className="flex flex-wrap gap-3 items-center justify-center lg:justify-start">
             {categories.map((cat) => {
               const isActive = activeCategory === cat;
               return (
